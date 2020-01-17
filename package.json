@@ -1,0 +1,23 @@
+{
+  "name": "junit2json",
+  "version": "0.1.0",
+  "description": "JUnit XML format to JSON with TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kesin11/ts-junit2json.git"
+  },
+  "keywords": [
+    "junit",
+    "parser"
+  ],
+  "author": "kesin1202000@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kesin11/ts-junit2json/issues"
+  },
+  "homepage": "https://github.com/Kesin11/ts-junit2json#readme"
+}
