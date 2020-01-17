@@ -22,6 +22,20 @@
   },
   "homepage": "https://github.com/Kesin11/ts-junit2json#readme",
   "dependencies": {
+    "xml2js": "0.4.23"
+  },
+  "devDependencies": {
+    "@types/jest": "24.9.0",
+    "jest": "24.9.0",
+    "jest-junit": "10.0.0",
+    "ts-jest": "24.3.0",
     "typescript": "3.7.5"
+  },
+  "jest-junit": {
+    "suiteName": "gcf_junit_xml_to_bq_dummy",
+    "outputDirectory": "junit",
+    "uniqueOutputName": "true",
+    "includeConsoleOutput": "true",
+    "usePathForSuiteName": "true"
   }
 }
