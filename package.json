@@ -4,6 +4,7 @@
   "description": "JUnit XML format to JSON with TypeScript",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "jest"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Kesin11/ts-junit2json/issues"
   },
-  "homepage": "https://github.com/Kesin11/ts-junit2json#readme"
+  "homepage": "https://github.com/Kesin11/ts-junit2json#readme",
+  "dependencies": {
+    "typescript": "3.7.5"
+  }
 }
