@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="gcf_junit_xml_to_bq_dummy" tests="12" failures="2" time="8.018">
+  <testsuite name="__tests__/gen_dummy_junit/dummy1.test.js" errors="0" failures="1" skipped="0" timestamp="2020-01-12T16:33:13" time="4.772" tests="4">
+    <testcase classname="dummy1 Always success tests should be wait 0-2sec" name="dummy1 Always success tests should be wait 0-2sec" time="0.414">
+    </testcase>
+    <testcase classname="dummy1 Always success tests should be wait 1-3sec" name="dummy1 Always success tests should be wait 1-3sec" time="1.344">
+    </testcase>
+    <testcase classname="dummy1 Randomly fail tests should be wait 0-1sec and fail 50%" name="dummy1 Randomly fail tests should be wait 0-1sec and fail 50%" time="0.673">
+      <failure>Error: expect(received).toBeGreaterThan(expected)
+
+Expected: &gt; 50
+Received:   4.897277513425746
+    at Object.it (/Users/kesin/github/gcf_junit_xml_to_bq/__tests__/gen_dummy_junit/dummy1.test.js:22:17)</failure>
+    </testcase>
+    <testcase classname="dummy1 Randomly fail tests should be wait 1-2sec and fail 30%" name="dummy1 Randomly fail tests should be wait 1-2sec and fail 30%" time="1.604">
+    </testcase>
+  </testsuite>
+  <testsuite name="__tests__/gen_dummy_junit/dummy3.test.js" errors="0" failures="1" skipped="0" timestamp="2020-01-12T16:33:13" time="6.372" tests="4">
+    <testcase classname="dummy3 Always success tests should be wait 0-2sec" name="dummy3 Always success tests should be wait 0-2sec" time="1.328">
+    </testcase>
+    <testcase classname="dummy3 Always success tests should be wait 1-3sec" name="dummy3 Always success tests should be wait 1-3sec" time="2.598">
+    </testcase>
+    <testcase classname="dummy3 Randomly fail tests should be wait 0-1sec and fail 30%" name="dummy3 Randomly fail tests should be wait 0-1sec and fail 30%" time="0.455">
+      <failure>Error: expect(received).toBeGreaterThan(expected)
+
+Expected: &gt; 30
+Received:   12.15901879426653
+    at Object.it (/Users/kesin/github/gcf_junit_xml_to_bq/__tests__/gen_dummy_junit/dummy3.test.js:22:17)</failure>
+    </testcase>
+    <testcase classname="dummy3 Randomly fail tests should be wait 1-2sec and fail 20%" name="dummy3 Randomly fail tests should be wait 1-2sec and fail 20%" time="1.228">
+    </testcase>
+  </testsuite>
+  <testsuite name="__tests__/gen_dummy_junit/dummy2.test.js" errors="0" failures="0" skipped="0" timestamp="2020-01-12T16:33:13" time="7.612" tests="4">
+    <testcase classname="dummy2 Always success tests should be wait 0-2sec" name="dummy2 Always success tests should be wait 0-2sec" time="1.937">
+    </testcase>
+    <testcase classname="dummy2 Always success tests should be wait 1-3sec" name="dummy2 Always success tests should be wait 1-3sec" time="2.904">
+    </testcase>
+    <testcase classname="dummy2 Randomly fail tests should be wait 0-1sec and fail 30%" name="dummy2 Randomly fail tests should be wait 0-1sec and fail 30%" time="0.105">
+    </testcase>
+    <testcase classname="dummy2 Randomly fail tests should be wait 1-2sec and fail 10%" name="dummy2 Randomly fail tests should be wait 1-2sec and fail 10%" time="1.948">
+    </testcase>
+  </testsuite>
+</testsuites>

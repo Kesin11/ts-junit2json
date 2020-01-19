@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="gcf_junit_xml_to_bq_dummy" tests="12" failures="0" time="5.82">
+  <testsuite name="__tests__/gen_dummy_junit/dummy2.test.js" errors="0" failures="0" skipped="0" timestamp="2020-01-12T16:33:39" time="4.189" tests="4">
+    <testcase classname="dummy2 Always success tests should be wait 0-2sec" name="dummy2 Always success tests should be wait 0-2sec" time="0.045">
+    </testcase>
+    <testcase classname="dummy2 Always success tests should be wait 1-3sec" name="dummy2 Always success tests should be wait 1-3sec" time="1.992">
+    </testcase>
+    <testcase classname="dummy2 Randomly fail tests should be wait 0-1sec and fail 30%" name="dummy2 Randomly fail tests should be wait 0-1sec and fail 30%" time="0.062">
+    </testcase>
+    <testcase classname="dummy2 Randomly fail tests should be wait 1-2sec and fail 10%" name="dummy2 Randomly fail tests should be wait 1-2sec and fail 10%" time="1.289">
+    </testcase>
+  </testsuite>
+  <testsuite name="__tests__/gen_dummy_junit/dummy3.test.js" errors="0" failures="0" skipped="0" timestamp="2020-01-12T16:33:39" time="5.309" tests="4">
+    <testcase classname="dummy3 Always success tests should be wait 0-2sec" name="dummy3 Always success tests should be wait 0-2sec" time="1.875">
+    </testcase>
+    <testcase classname="dummy3 Always success tests should be wait 1-3sec" name="dummy3 Always success tests should be wait 1-3sec" time="1.346">
+    </testcase>
+    <testcase classname="dummy3 Randomly fail tests should be wait 0-1sec and fail 30%" name="dummy3 Randomly fail tests should be wait 0-1sec and fail 30%" time="0.11">
+    </testcase>
+    <testcase classname="dummy3 Randomly fail tests should be wait 1-2sec and fail 20%" name="dummy3 Randomly fail tests should be wait 1-2sec and fail 20%" time="1.211">
+    </testcase>
+  </testsuite>
+  <testsuite name="__tests__/gen_dummy_junit/dummy1.test.js" errors="0" failures="0" skipped="0" timestamp="2020-01-12T16:33:39" time="5.406" tests="4">
+    <testcase classname="dummy1 Always success tests should be wait 0-2sec" name="dummy1 Always success tests should be wait 0-2sec" time="0.494">
+    </testcase>
+    <testcase classname="dummy1 Always success tests should be wait 1-3sec" name="dummy1 Always success tests should be wait 1-3sec" time="1.466">
+    </testcase>
+    <testcase classname="dummy1 Randomly fail tests should be wait 0-1sec and fail 50%" name="dummy1 Randomly fail tests should be wait 0-1sec and fail 50%" time="0.73">
+    </testcase>
+    <testcase classname="dummy1 Randomly fail tests should be wait 1-2sec and fail 30%" name="dummy1 Randomly fail tests should be wait 1-2sec and fail 30%" time="1.952">
+    </testcase>
+  </testsuite>
+</testsuites>
