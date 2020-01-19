@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parse snapshot all success xml 1`] = `
+Object {
+  "failures": 0,
+  "name": "gcf_junit_xml_to_bq_dummy",
+  "tests": 12,
+  "testsuite": Array [
+    Object {
+      "errors": 0,
+      "failures": 0,
+      "name": "__tests__/gen_dummy_junit/dummy2.test.js",
+      "skipped": 0,
+      "testcase": Array [
+        Object {
+          "classname": "dummy2 Always success tests should be wait 0-2sec",
+          "name": "dummy2 Always success tests should be wait 0-2sec",
+          "time": 0.045,
+        },
+        Object {
+          "classname": "dummy2 Always success tests should be wait 1-3sec",
+          "name": "dummy2 Always success tests should be wait 1-3sec",
+          "time": 1.992,
+        },
+        Object {
+          "classname": "dummy2 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "name": "dummy2 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "time": 0.062,
+        },
+        Object {
+          "classname": "dummy2 Randomly fail tests should be wait 1-2sec and fail 10%",
+          "name": "dummy2 Randomly fail tests should be wait 1-2sec and fail 10%",
+          "time": 1.289,
+        },
+      ],
+      "tests": 4,
+      "time": 4.189,
+      "timestamp": "2020-01-12T16:33:39",
+    },
+    Object {
+      "errors": 0,
+      "failures": 0,
+      "name": "__tests__/gen_dummy_junit/dummy3.test.js",
+      "skipped": 0,
+      "testcase": Array [
+        Object {
+          "classname": "dummy3 Always success tests should be wait 0-2sec",
+          "name": "dummy3 Always success tests should be wait 0-2sec",
+          "time": 1.875,
+        },
+        Object {
+          "classname": "dummy3 Always success tests should be wait 1-3sec",
+          "name": "dummy3 Always success tests should be wait 1-3sec",
+          "time": 1.346,
+        },
+        Object {
+          "classname": "dummy3 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "name": "dummy3 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "time": 0.11,
+        },
+        Object {
+          "classname": "dummy3 Randomly fail tests should be wait 1-2sec and fail 20%",
+          "name": "dummy3 Randomly fail tests should be wait 1-2sec and fail 20%",
+          "time": 1.211,
+        },
+      ],
+      "tests": 4,
+      "time": 5.309,
+      "timestamp": "2020-01-12T16:33:39",
+    },
+    Object {
+      "errors": 0,
+      "failures": 0,
+      "name": "__tests__/gen_dummy_junit/dummy1.test.js",
+      "skipped": 0,
+      "testcase": Array [
+        Object {
+          "classname": "dummy1 Always success tests should be wait 0-2sec",
+          "name": "dummy1 Always success tests should be wait 0-2sec",
+          "time": 0.494,
+        },
+        Object {
+          "classname": "dummy1 Always success tests should be wait 1-3sec",
+          "name": "dummy1 Always success tests should be wait 1-3sec",
+          "time": 1.466,
+        },
+        Object {
+          "classname": "dummy1 Randomly fail tests should be wait 0-1sec and fail 50%",
+          "name": "dummy1 Randomly fail tests should be wait 0-1sec and fail 50%",
+          "time": 0.73,
+        },
+        Object {
+          "classname": "dummy1 Randomly fail tests should be wait 1-2sec and fail 30%",
+          "name": "dummy1 Randomly fail tests should be wait 1-2sec and fail 30%",
+          "time": 1.952,
+        },
+      ],
+      "tests": 4,
+      "time": 5.406,
+      "timestamp": "2020-01-12T16:33:39",
+    },
+  ],
+  "time": 5.82,
+}
+`;
+
+exports[`parse snapshot failure xml 1`] = `
+Object {
+  "failures": 2,
+  "name": "gcf_junit_xml_to_bq_dummy",
+  "tests": 12,
+  "testsuite": Array [
+    Object {
+      "errors": 0,
+      "failures": 1,
+      "name": "__tests__/gen_dummy_junit/dummy1.test.js",
+      "skipped": 0,
+      "testcase": Array [
+        Object {
+          "classname": "dummy1 Always success tests should be wait 0-2sec",
+          "name": "dummy1 Always success tests should be wait 0-2sec",
+          "time": 0.414,
+        },
+        Object {
+          "classname": "dummy1 Always success tests should be wait 1-3sec",
+          "name": "dummy1 Always success tests should be wait 1-3sec",
+          "time": 1.344,
+        },
+        Object {
+          "classname": "dummy1 Randomly fail tests should be wait 0-1sec and fail 50%",
+          "failure": Array [
+            Object {
+              "body": "Error: expect(received).toBeGreaterThan(expected)
+
+Expected: > 50
+Received:   4.897277513425746
+    at Object.it (/Users/kesin/github/gcf_junit_xml_to_bq/__tests__/gen_dummy_junit/dummy1.test.js:22:17)",
+            },
+          ],
+          "name": "dummy1 Randomly fail tests should be wait 0-1sec and fail 50%",
+          "time": 0.673,
+        },
+        Object {
+          "classname": "dummy1 Randomly fail tests should be wait 1-2sec and fail 30%",
+          "name": "dummy1 Randomly fail tests should be wait 1-2sec and fail 30%",
+          "time": 1.604,
+        },
+      ],
+      "tests": 4,
+      "time": 4.772,
+      "timestamp": "2020-01-12T16:33:13",
+    },
+    Object {
+      "errors": 0,
+      "failures": 1,
+      "name": "__tests__/gen_dummy_junit/dummy3.test.js",
+      "skipped": 0,
+      "testcase": Array [
+        Object {
+          "classname": "dummy3 Always success tests should be wait 0-2sec",
+          "name": "dummy3 Always success tests should be wait 0-2sec",
+          "time": 1.328,
+        },
+        Object {
+          "classname": "dummy3 Always success tests should be wait 1-3sec",
+          "name": "dummy3 Always success tests should be wait 1-3sec",
+          "time": 2.598,
+        },
+        Object {
+          "classname": "dummy3 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "failure": Array [
+            Object {
+              "body": "Error: expect(received).toBeGreaterThan(expected)
+
+Expected: > 30
+Received:   12.15901879426653
+    at Object.it (/Users/kesin/github/gcf_junit_xml_to_bq/__tests__/gen_dummy_junit/dummy3.test.js:22:17)",
+            },
+          ],
+          "name": "dummy3 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "time": 0.455,
+        },
+        Object {
+          "classname": "dummy3 Randomly fail tests should be wait 1-2sec and fail 20%",
+          "name": "dummy3 Randomly fail tests should be wait 1-2sec and fail 20%",
+          "time": 1.228,
+        },
+      ],
+      "tests": 4,
+      "time": 6.372,
+      "timestamp": "2020-01-12T16:33:13",
+    },
+    Object {
+      "errors": 0,
+      "failures": 0,
+      "name": "__tests__/gen_dummy_junit/dummy2.test.js",
+      "skipped": 0,
+      "testcase": Array [
+        Object {
+          "classname": "dummy2 Always success tests should be wait 0-2sec",
+          "name": "dummy2 Always success tests should be wait 0-2sec",
+          "time": 1.937,
+        },
+        Object {
+          "classname": "dummy2 Always success tests should be wait 1-3sec",
+          "name": "dummy2 Always success tests should be wait 1-3sec",
+          "time": 2.904,
+        },
+        Object {
+          "classname": "dummy2 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "name": "dummy2 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "time": 0.105,
+        },
+        Object {
+          "classname": "dummy2 Randomly fail tests should be wait 1-2sec and fail 10%",
+          "name": "dummy2 Randomly fail tests should be wait 1-2sec and fail 10%",
+          "time": 1.948,
+        },
+      ],
+      "tests": 4,
+      "time": 7.612,
+      "timestamp": "2020-01-12T16:33:13",
+    },
+  ],
+  "time": 8.018,
+}
+`;
