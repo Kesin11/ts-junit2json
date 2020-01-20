@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
