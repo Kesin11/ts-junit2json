@@ -1,5 +1,52 @@
 import xml2js from 'xml2js'
 
+export type TestSuiteReport = {
+  name?: string
+  time?: number
+  suites: TestSuite[]
+}
+
+export type TestSuites = {
+  testsuite: TestSuite[]
+  name?: string
+  time?: number
+  tests?: number
+  failures?: number
+  error?: number
+  disabled?: number
+}
+
+export type TestSuite = {
+  testcase: TestCase[]
+  name: string
+  tests: number
+  failures?: number
+  errors?: number
+  time?: number
+  disabled?: number
+  skipped?: number
+  timestamp?: string
+  hostname?: string
+  id?: string
+  package?: string
+  properties?: Array< {name: string, value: string } >
+  "system-out"?: string[]
+  "system-err"?: string[]
+}
+
+export type TestCase = {
+  name: string
+  classname: string
+  assertions?: number
+  time?: number
+  status?: string
+  skipped?: Array<{ message: string }>
+  error?: Array<{ message: string, type?: string }>
+  failure?: Array<{ message: string, type?: string }>
+  "system-out"?: string[]
+  "system-err"?: string[]
+}
+
 export const parse = async (xmlString: xml2js.convertableToString) => {
   const result = await xml2js.parseStringPromise(xmlString, {
     attrValueProcessors: [xml2js.processors.parseNumbers]
