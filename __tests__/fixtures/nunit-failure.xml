@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites name="Tutorial.Tests.dll" tests="4" failures="1" time="0.0105824">
+  <testsuite name="Tutorial.Tests.dll" tests="4" skipped="0" failures="1" errors="0" time="0.0105824" timestamp="2019-12-31T 09:33:25Z" hostname="executor://xunit/VsTestRunner2/netcoreapp">
+    <testcase classname="Tutorial.Tests.PersonClassTest" name="Tutorial.Tests.PersonClassTest.PersonClass_ToString" file="/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll" time="0.0039775" />
+    <testcase classname="Tutorial.Tests.PersonTest" name="Tutorial.Tests.PersonTest.Person_fname" file="/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll" time="0.0063612">
+      <failure type="failure" message="Assert.Equal() Failure&#xA;          ↓ (pos 0)&#xA;Expected: foge&#xA;Actual:   john&#xA;          ↑ (pos 0)">   at Tutorial.Tests.PersonTest.Person_fname() in /Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/PersonTest.cs:line 23
+</failure>
+    </testcase>
+    <testcase classname="Tutorial.Tests.PersonTest" name="Tutorial.Tests.PersonTest.Person_Name" file="/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll" time="0.0001106" />
+    <testcase classname="Tutorial.Tests.PersonTest" name="Tutorial.Tests.PersonTest.Person_lname" file="/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll" time="0.0001331" />
+  </testsuite>
+</testsuites>

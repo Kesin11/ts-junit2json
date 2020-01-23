@@ -51,6 +51,7 @@ export const parse = async (xmlString: xml2js.convertableToString) => {
   const result = await xml2js.parseStringPromise(xmlString, {
     attrValueProcessors: [xml2js.processors.parseNumbers]
   })
+
   const rawTestsuites = result['testsuites']
   const output = { ...rawTestsuites['$'] }
 
@@ -89,5 +90,45 @@ export const parse = async (xmlString: xml2js.convertableToString) => {
   }
   output['testsuite'] = testsuiteList
 
+  return output
+}
+
+export const parse2 = async (xmlString: xml2js.convertableToString) => {
+  const result = await xml2js.parseStringPromise(xmlString, {
+    attrValueProcessors: [xml2js.processors.parseNumbers]
+  })
+
+  // console.log(JSON.stringify(result, null, 2))
+
+  return _parse(result['testsuites'])
+}
+
+export const _parse = (obj: any): any => {
+  let output: {[key: string]: any} = {}
+  if (Array.isArray(obj)) {
+    return obj.map((_obj: any) => {
+      // 中身がさらにネストされた配列 or $キーのobjectなら再起
+      if (Array.isArray(_obj) || typeof(_obj) === 'object') {
+        return _parse(_obj)
+      }
+      // 配列の中身が単なる文字列ならbodyキーを自分で付けてobjectで返す
+      return { body: _obj }
+    })
+  }
+  Object.keys(obj).forEach((key) => {
+    const nested = obj[key]
+    if (key === '$') {
+      output = { ...output, ..._parse(nested) }
+    }
+    else if (typeof(nested) === 'object') {
+      output[key] = _parse(nested)
+    }
+    else if (key === '_') {
+      output['body'] = nested
+    }
+    else {
+      output[key] = nested
+    }
+  })
   return output
 }
