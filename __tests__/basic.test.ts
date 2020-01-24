@@ -1,6 +1,6 @@
 import * as junit2json from '../src/index'
 
-describe('parse snapshot', () => {
+describe('convert xml2js output', () => {
   it('basic', async () => {
     const obj = { 
       '$': {
@@ -40,7 +40,7 @@ describe('parse snapshot', () => {
         { '$': {
             tests: 1,
           },
-          failure: [ 'body text' ],
+          failure: [ 'inner text' ],
         }
       ]
     }  
@@ -51,14 +51,14 @@ describe('parse snapshot', () => {
           {
             tests: 1,
             failure: [
-              { body: 'body text' }
+              { inner: 'inner text' }
             ]
           },
         ]
     })
   })
 
-  it('body', async () => {
+  it('inner', async () => {
     const obj = { 
       testsuite: {
         $: {
@@ -75,7 +75,7 @@ describe('parse snapshot', () => {
       testsuite: {
         tests: 1,
         failure: {
-          body: 'failure text'
+          inner: 'failure text'
         }
       }
     })

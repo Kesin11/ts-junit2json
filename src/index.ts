@@ -71,12 +71,12 @@ export const parse = async (xmlString: xml2js.convertableToString) => {
           if (typeof rawFailure === 'object') {
             failure = { ...rawFailure['$'] }
             if (rawFailure['_']) {
-              failure = { ...failure, body: rawFailure['_'] }
+              failure = { ...failure, inner: rawFailure['_'] }
             }
           }
           // attributeが何も存在しない場合、$や_は存在せずにstring型でタグの中身が文字列として入っている
           else {
-            failure = { body: rawFailure }
+            failure = { inner: rawFailure }
           }
         failureList.push(failure)
         }
@@ -111,8 +111,8 @@ export const _parse = (obj: any): any => {
       if (Array.isArray(_obj) || typeof(_obj) === 'object') {
         return _parse(_obj)
       }
-      // 配列の中身が単なる文字列ならbodyキーを自分で付けてobjectで返す
-      return { body: _obj }
+      // 配列の中身が単なる文字列ならinnerキーを自分で付けてobjectで返す
+      return { inner: _obj }
     })
   }
   Object.keys(obj).forEach((key) => {
@@ -124,7 +124,7 @@ export const _parse = (obj: any): any => {
       output[key] = _parse(nested)
     }
     else if (key === '_') {
-      output['body'] = nested
+      output['inner'] = nested
     }
     else {
       output[key] = nested
