@@ -1,11 +1,5 @@
 import xml2js from 'xml2js'
 
-export type TestSuiteReport = {
-  name?: string
-  time?: number
-  suites: TestSuite[]
-}
-
 export type TestSuites = {
   testsuite: TestSuite[]
   name?: string
@@ -40,25 +34,25 @@ export type TestCase = {
   assertions?: number
   time?: number
   status?: string
-  skipped?: Array<{ message: string }>
-  error?: Array<{ message: string, type?: string }>
-  failure?: Array<{ message: string, type?: string }>
+  skipped?: Array<{ message?: string }>
+  error?: Array<{ message?: string, type?: string, inner?: string }>
+  failure?: Array<{ message?: string, type?: string, inner?: string }>
   "system-out"?: string[]
   "system-err"?: string[]
 }
 
-export const parse = async (xmlString: xml2js.convertableToString) => {
+export const parse = async (xmlString: xml2js.convertableToString): Promise<TestSuites> => {
   const result = await xml2js.parseStringPromise(xmlString, {
     attrValueProcessors: [xml2js.processors.parseNumbers]
   })
 
-  return _parse(result['testsuites'])
+  return _parse(result['testsuites']) as Promise<TestSuites>
 }
 
-const _parse = (obj: any): any => {
-  let output: {[key: string]: any} = {}
-  if (Array.isArray(obj)) {
-    return obj.map((_obj: any) => {
+type ObjOrArray = {[key: string]: any } | Array<ObjOrArray>
+const _parse = (objOrArray: ObjOrArray): ObjOrArray => {
+  if (Array.isArray(objOrArray)) {
+    return objOrArray.map((_obj: ObjOrArray) => {
       // 中身がさらにネストされた配列 or $キーのobjectなら再起
       if (Array.isArray(_obj) || typeof(_obj) === 'object') {
         return _parse(_obj)
@@ -67,8 +61,9 @@ const _parse = (obj: any): any => {
       return { inner: _obj }
     })
   }
-  Object.keys(obj).forEach((key) => {
-    const nested = obj[key]
+  let output: {[key: string]: any} = {}
+  Object.keys(objOrArray).forEach((key) => {
+    const nested = objOrArray[key]
     if (key === '$') {
       output = { ...output, ..._parse(nested) }
     }
