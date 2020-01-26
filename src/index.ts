@@ -67,6 +67,9 @@ const _parse = (objOrArray: ObjOrArray): ObjOrArray => {
     if (key === '$') {
       output = { ...output, ..._parse(nested) }
     }
+    else if (key === 'system-out' || key === 'system-err') {
+      output[key] = nested.map((inner: string) => inner)
+    }
     else if (typeof(nested) === 'object') {
       output[key] = _parse(nested)
     }

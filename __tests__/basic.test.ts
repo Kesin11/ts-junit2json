@@ -76,4 +76,48 @@ describe('convert xml2js output', () => {
       }]
     })
   })
+
+  it('system-out', async () => {
+    const xml = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <testsuites>
+      <testsuite>
+        <testcase>
+          <system-out>system out text</system-out>
+        </testcase>
+      </testsuite>
+    </testsuites>
+    `
+    const parsed = await junit2json.parse(xml)
+
+    expect(parsed).toEqual({
+      testsuite: [{
+        testcase: [{
+          "system-out": [ "system out text" ]
+        }],
+      }]
+    })
+  })
+
+  it('system-error', async () => {
+    const xml = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <testsuites>
+      <testsuite>
+        <testcase>
+          <system-err>system error text</system-err>
+        </testcase>
+      </testsuite>
+    </testsuites>
+    `
+    const parsed = await junit2json.parse(xml)
+
+    expect(parsed).toEqual({
+      testsuite: [{
+        testcase: [{
+          "system-err": [ "system error text" ]
+        }],
+      }]
+    })
+  })
 })
