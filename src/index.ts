@@ -49,6 +49,12 @@ export const parse = async (xmlString: xml2js.convertableToString): Promise<Test
   return _parse(result['testsuites']) as Promise<TestSuites>
 }
 
+export const parseWithOptions = async (xmlString: xml2js.convertableToString, options: xml2js.OptionsV2): Promise<any> => {
+  const result = await xml2js.parseStringPromise(xmlString, options)
+
+  return _parse(result['testsuites']) as Promise<any>
+}
+
 type ObjOrArray = {[key: string]: any } | Array<ObjOrArray>
 const _parse = (objOrArray: ObjOrArray): ObjOrArray => {
   if (Array.isArray(objOrArray)) {
