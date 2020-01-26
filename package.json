@@ -37,7 +37,7 @@
     "typescript": "3.7.5"
   },
   "jest-junit": {
-    "suiteName": "gcf_junit_xml_to_bq_dummy",
+    "suiteName": "ts-junit2json",
     "outputDirectory": "junit",
     "uniqueOutputName": "true",
     "includeConsoleOutput": "true",
