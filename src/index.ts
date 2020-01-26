@@ -52,58 +52,10 @@ export const parse = async (xmlString: xml2js.convertableToString) => {
     attrValueProcessors: [xml2js.processors.parseNumbers]
   })
 
-  const rawTestsuites = result['testsuites']
-  const output = { ...rawTestsuites['$'] }
-
-  const testsuiteList = []
-  for (const rawTestsuite of rawTestsuites['testsuite']) {
-    const testsuite = { ...rawTestsuite['$'] }
-
-    const testcaseList = []
-    for (const rawTestcase of rawTestsuite['testcase']) {
-      const testcase = { ...rawTestcase['$'] }
-      // TODO: キーの中身を見て$、_、配列であれば展開するように一般化できるはず
-      const rawFailure = rawTestcase['failure']
-      if (rawFailure) {
-        const failureList = []
-        for (const rawFailure of rawTestcase['failure']) {
-          let failure = {}
-          if (typeof rawFailure === 'object') {
-            failure = { ...rawFailure['$'] }
-            if (rawFailure['_']) {
-              failure = { ...failure, inner: rawFailure['_'] }
-            }
-          }
-          // attributeが何も存在しない場合、$や_は存在せずにstring型でタグの中身が文字列として入っている
-          else {
-            failure = { inner: rawFailure }
-          }
-        failureList.push(failure)
-        }
-        testcase['failure'] = failureList
-      }
-
-      testcaseList.push(testcase)
-    }
-    testsuite['testcase'] = testcaseList
-    testsuiteList.push(testsuite)
-  }
-  output['testsuite'] = testsuiteList
-
-  return output
-}
-
-export const parse2 = async (xmlString: xml2js.convertableToString) => {
-  const result = await xml2js.parseStringPromise(xmlString, {
-    attrValueProcessors: [xml2js.processors.parseNumbers]
-  })
-
-  // console.log(JSON.stringify(result, null, 2))
-
   return _parse(result['testsuites'])
 }
 
-export const _parse = (obj: any): any => {
+const _parse = (obj: any): any => {
   let output: {[key: string]: any} = {}
   if (Array.isArray(obj)) {
     return obj.map((_obj: any) => {
