@@ -104,7 +104,7 @@ Object {
 }
 `;
 
-exports[`parse snapshot failure xml 1`] = `
+exports[`parse snapshot jest failure xml 1`] = `
 Object {
   "failures": 2,
   "name": "gcf_junit_xml_to_bq_dummy",
@@ -130,7 +130,7 @@ Object {
           "classname": "dummy1 Randomly fail tests should be wait 0-1sec and fail 50%",
           "failure": Array [
             Object {
-              "body": "Error: expect(received).toBeGreaterThan(expected)
+              "inner": "Error: expect(received).toBeGreaterThan(expected)
 
 Expected: > 50
 Received:   4.897277513425746
@@ -170,7 +170,7 @@ Received:   4.897277513425746
           "classname": "dummy3 Randomly fail tests should be wait 0-1sec and fail 30%",
           "failure": Array [
             Object {
-              "body": "Error: expect(received).toBeGreaterThan(expected)
+              "inner": "Error: expect(received).toBeGreaterThan(expected)
 
 Expected: > 30
 Received:   12.15901879426653
@@ -223,5 +223,64 @@ Received:   12.15901879426653
     },
   ],
   "time": 8.018,
+}
+`;
+
+exports[`parse snapshot nunit failure xml 1`] = `
+Object {
+  "failures": 1,
+  "name": "Tutorial.Tests.dll",
+  "tests": 4,
+  "testsuite": Array [
+    Object {
+      "errors": 0,
+      "failures": 1,
+      "hostname": "executor://xunit/VsTestRunner2/netcoreapp",
+      "name": "Tutorial.Tests.dll",
+      "skipped": 0,
+      "testcase": Array [
+        Object {
+          "classname": "Tutorial.Tests.PersonClassTest",
+          "file": "/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll",
+          "name": "Tutorial.Tests.PersonClassTest.PersonClass_ToString",
+          "time": 0.0039775,
+        },
+        Object {
+          "classname": "Tutorial.Tests.PersonTest",
+          "failure": Array [
+            Object {
+              "inner": "   at Tutorial.Tests.PersonTest.Person_fname() in /Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/PersonTest.cs:line 23
+",
+              "message": "Assert.Equal() Failure
+          ↓ (pos 0)
+Expected: foge
+Actual:   john
+          ↑ (pos 0)",
+              "type": "failure",
+            },
+          ],
+          "file": "/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll",
+          "name": "Tutorial.Tests.PersonTest.Person_fname",
+          "time": 0.0063612,
+        },
+        Object {
+          "classname": "Tutorial.Tests.PersonTest",
+          "file": "/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll",
+          "name": "Tutorial.Tests.PersonTest.Person_Name",
+          "time": 0.0001106,
+        },
+        Object {
+          "classname": "Tutorial.Tests.PersonTest",
+          "file": "/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll",
+          "name": "Tutorial.Tests.PersonTest.Person_lname",
+          "time": 0.0001331,
+        },
+      ],
+      "tests": 4,
+      "time": 0.0105824,
+      "timestamp": "2019-12-31T 09:33:25Z",
+    },
+  ],
+  "time": 0.0105824,
 }
 `;
