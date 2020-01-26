@@ -1,5 +1,13 @@
 {
   "extends": [
-    "config:base"
-  ]
+    "config:semverAllMonthly",
+    ":label(renovate)",
+    ":timezone(Asia/Tokyo)"
+  ],
+  "npm": {
+    "extends": [
+      ":automergeMinor",
+      ":unpublishSafe"
+    ]
+  }
 }
