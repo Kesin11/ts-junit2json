@@ -1,5 +1,5 @@
 # ts-junit2json
-TODO: add github actions badge
+![CI](https://github.com/Kesin11/ts-junit2json/workflows/Node%20CI/badge.svg)
 
 ts-juni2json provides a converter to convert JUnit XML format to JSON and it written by TypeScript.
 
