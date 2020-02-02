@@ -15,7 +15,10 @@
     "type": "git",
     "url": "git+https://github.com/Kesin11/ts-junit2json.git"
   },
-  "keywords": ["junit", "parser"],
+  "keywords": [
+    "junit",
+    "parser"
+  ],
   "author": "kesin1202000@gmail.com",
   "license": "MIT",
   "bugs": {
