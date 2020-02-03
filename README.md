@@ -89,6 +89,18 @@ main()
 }
 ```
 
+# Filter some tags
+If you want to filter some tags like `<system-out>` or `<system-err>`, you can use `replacer` function argument in [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+
+```ts
+const output = await parse(xmlString)
+const replacer = (key: any, value: any) => {
+  if (key === 'system-out' || key === 'system-err') return undefined
+  return value
+}
+console.log(JSON.stringify(output, replacer, 2))
+```
+
 # Notice
 ts-junit2json reconstructs some tags constructure for simple and consitent structure.
 
