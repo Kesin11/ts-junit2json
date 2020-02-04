@@ -45,5 +45,8 @@
     "uniqueOutputName": "true",
     "includeConsoleOutput": "true",
     "usePathForSuiteName": "true"
-  }
+  },
+  "files": [
+    "dist/"
+  ]
 }
