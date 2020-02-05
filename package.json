@@ -1,6 +1,6 @@
 {
   "name": "junit2json",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "JUnit XML format to JSON with TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

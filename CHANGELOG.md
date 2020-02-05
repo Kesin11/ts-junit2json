@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/Kesin11/ts-junit2json/compare/v0.1.1...v0.1.2) (2020-02-05)
+
+
+### Bug Fixes
+
+* **package:** Add 'types' in package.json ([3383bef](https://github.com/Kesin11/ts-junit2json/commit/3383befc8e6e05eea18dbfdb48aea9aba97aa6e8))
+
+
+
 ## [0.1.1](https://github.com/Kesin11/ts-junit2json/compare/v0.1.0...v0.1.1) (2020-02-05)
 
 
