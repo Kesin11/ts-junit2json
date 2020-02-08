@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/Kesin11/ts-junit2json/compare/v0.1.2...v0.1.3) (2020-02-08)
+
+
+### Bug Fixes
+
+* Fix incorrect type name TestSuites.error to TestSuites.errors ([bb191b4](https://github.com/Kesin11/ts-junit2json/commit/bb191b4215873568e82e659c5a740e133614a8de))
+
+
+
 ## [0.1.2](https://github.com/Kesin11/ts-junit2json/compare/v0.1.1...v0.1.2) (2020-02-05)
 
 
