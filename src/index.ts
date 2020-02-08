@@ -6,7 +6,7 @@ export type TestSuites = {
   time?: number
   tests?: number
   failures?: number
-  error?: number
+  errors?: number
   disabled?: number
 }
 
