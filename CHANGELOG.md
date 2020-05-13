@@ -1,8 +1,6 @@
 ## [1.0.1](https://github.com/Kesin11/ts-junit2json/compare/v1.0.0...v1.0.1) (2020-05-13)
 
 
-### Bug Fixes
-
 * **docs:** Fix README ([d3a1c88](https://github.com/Kesin11/ts-junit2json/commit/d3a1c881194988754c79bd2563cf5a94ea6a5ea2))
 
 
