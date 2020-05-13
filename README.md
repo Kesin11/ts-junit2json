@@ -107,5 +107,48 @@ ts-junit2json reconstructs some tags constructure for simple and consitent struc
 - Tag inner text are store to the value of 'inner' key.
   - The only exceptions are `<system-out>` and `<system-err>`, whose inner text are store to the string array.
 
+# CLI
+```bash
+npx ts-junit2json cli.js -p -f system-out,system-err junit.xml
+```
+
+```
+cli.js <path>
+
+Convert JUnit XML format to JSON
+
+Positionals:
+  path  JUnit XML path                                                  [string]
+
+Options:
+  --help             Show help                                         [boolean]
+  --version          Show version number                               [boolean]
+  -p, --pretty       Output pretty JSON                                [boolean]
+  -f, --filter-tags  Filter XML tag names                               [string]
+
+Examples:
+  cli.js -p -f system-out,system-err        Output pretty JSON with filter
+  junit.xml                                 <system-out> and <system-err> tags.
+```
+
+## Example with `jq`
+Count testcases.
+
+```bash
+npx junit2json junit.xml | jq .tests
+```
+
+Show testsuite names.
+
+```bash
+npx junit2json junit.xml | jq .testsuite[].name
+```
+
+Show testcase classnames.
+
+```bash
+npx junit2json junit.xml | jq .testsuite[].testcase[].classname
+```
+
 # License
 MIT

@@ -7,6 +7,9 @@
   "files": [
     "dist/"
   ],
+  "bin": {
+    "junit2json": "dist/cli.js"
+  },
   "scripts": {
     "clean": "rimraf dist/*",
     "build": "tsc",
@@ -30,12 +33,14 @@
   },
   "homepage": "https://github.com/Kesin11/ts-junit2json#readme",
   "dependencies": {
-    "xml2js": "0.4.23"
+    "xml2js": "0.4.23",
+    "yargs": "15.3.1"
   },
   "devDependencies": {
     "@types/jest": "25.2.1",
     "@types/node": "13.13.4",
     "@types/xml2js": "0.4.5",
+    "@types/yargs": "15.0.4",
     "jest": "25.5.3",
     "jest-junit": "10.0.0",
     "rimraf": "3.0.2",
