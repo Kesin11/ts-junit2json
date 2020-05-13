@@ -1,3 +1,12 @@
+# [1.0.0](https://github.com/Kesin11/ts-junit2json/compare/v0.1.3...v1.0.0) (2020-05-13)
+
+
+### Features
+
+* **cli:** Add CLI interface ([a87e64b](https://github.com/Kesin11/ts-junit2json/commit/a87e64b805a1fab674678b1e5586589d50d613c4))
+
+
+
 ## [0.1.3](https://github.com/Kesin11/ts-junit2json/compare/v0.1.2...v0.1.3) (2020-02-08)
 
 
