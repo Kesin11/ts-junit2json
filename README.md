@@ -109,7 +109,7 @@ ts-junit2json reconstructs some tags constructure for simple and consitent struc
 
 # CLI
 ```bash
-npx ts-junit2json cli.js -p -f system-out,system-err junit.xml
+npx junit2json cli.js -p -f system-out,system-err junit.xml
 ```
 
 ```
