@@ -1,4 +1,5 @@
 # ts-junit2json
+[![junit2json](https://badgen.net/npm/v/junit2json)](https://www.npmjs.com/package/junit2json)
 ![CI](https://github.com/Kesin11/ts-junit2json/workflows/Node%20CI/badge.svg)
 
 ts-juni2json provides a converter to convert JUnit XML format to JSON and it written by TypeScript.
@@ -109,11 +110,14 @@ ts-junit2json reconstructs some tags constructure for simple and consitent struc
 
 # CLI
 ```bash
-npx junit2json cli.js -p -f system-out,system-err junit.xml
+npx junit2json junit.xml
+
+# with full options
+npx junit2json -p -f system-out,system-err junit.xml
 ```
 
 ```
-cli.js <path>
+junit2json <path>
 
 Convert JUnit XML format to JSON
 
@@ -127,7 +131,7 @@ Options:
   -f, --filter-tags  Filter XML tag names                               [string]
 
 Examples:
-  cli.js -p -f system-out,system-err        Output pretty JSON with filter
+  junit2json -p -f system-out,system-err    Output pretty JSON with filter
   junit.xml                                 <system-out> and <system-err> tags.
 ```
 
