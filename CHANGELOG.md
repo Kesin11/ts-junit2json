@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/Kesin11/ts-junit2json/compare/v1.0.1...v1.0.2) (2020-06-09)
+
+
+### Bug Fixes
+
+* Fix: bugfix @types/xml2js type error when import junit2json with TypeScript ([285eb8](https://github.com/Kesin11/ts-junit2json/commit/285eb82cc0f3a786d86787c68227a91c3cb86ba4))
+
+
 ## [1.0.1](https://github.com/Kesin11/ts-junit2json/compare/v1.0.0...v1.0.1) (2020-05-13)
 
 
