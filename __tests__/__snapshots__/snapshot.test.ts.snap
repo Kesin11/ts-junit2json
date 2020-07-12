@@ -1,5 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`parse snapshot Android robolectric success xml 1`] = `
+Object {
+  "errors": 0,
+  "failures": 0,
+  "hostname": "fv-az88",
+  "name": "com.google.samples.apps.sunflower.RobolectricGardenActivityTest2",
+  "properties": Array [
+    Object {
+      "inner": "",
+    },
+  ],
+  "skipped": 0,
+  "system-err": Array [
+    "[Robolectric] WARN: Android SDK 29 requires Java 9 (have Java 8). Tests won't be run on SDK 29 unless explicitly requested.
+Downloading: org/robolectric/android-all/9-robolectric-4913185-2/android-all-9-robolectric-4913185-2.pom from repository sonatype at https://oss.sonatype.org/content/groups/public/
+Transferring 2K from sonatype
+Downloading: org/sonatype/oss/oss-parent/9/oss-parent-9.pom from repository sonatype at https://oss.sonatype.org/content/groups/public/
+Transferring 6K from sonatype
+Downloading: org/robolectric/android-all/9-robolectric-4913185-2/android-all-9-robolectric-4913185-2.jar from repository sonatype at https://oss.sonatype.org/content/groups/public/
+Transferring 118099K from sonatype
+",
+  ],
+  "system-out": Array [
+    "Downloading from maven 
+[Robolectric] com.google.samples.apps.sunflower.RobolectricGardenActivityTest2.gardenActivityTest2: sdk=28; resources=BINARY
+Called loadFromPath(/system/framework/framework-res.apk, true); mode=binary sdk=28
+***goPlantList
+***showPlantDetail
+***addToMyGarden
+***goBackPlantList
+***goMyGarden
+***assertPlanted
+[Robolectric] com.google.samples.apps.sunflower.RobolectricGardenActivityTest2.gardenActivityTest_Eggplant: sdk=28; resources=BINARY
+***goPlantList
+***showPlantDetail
+***addToMyGarden
+***goBackPlantList
+***goMyGarden
+***assertPlanted
+",
+  ],
+  "testcase": Array [
+    Object {
+      "classname": "com.google.samples.apps.sunflower.RobolectricGardenActivityTest2",
+      "name": "gardenActivityTest2",
+      "time": 29.876,
+    },
+    Object {
+      "classname": "com.google.samples.apps.sunflower.RobolectricGardenActivityTest2",
+      "name": "gardenActivityTest_Eggplant",
+      "time": 13.568,
+    },
+  ],
+  "tests": 2,
+  "time": 43.444,
+  "timestamp": "2020-07-12T03:33:52",
+}
+`;
+
 exports[`parse snapshot all success xml 1`] = `
 Object {
   "failures": 0,

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.google.samples.apps.sunflower.RobolectricGardenActivityTest2" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-07-12T03:33:52" hostname="fv-az88" time="43.444">
+  <properties/>
+  <testcase name="gardenActivityTest2" classname="com.google.samples.apps.sunflower.RobolectricGardenActivityTest2" time="29.876"/>
+  <testcase name="gardenActivityTest_Eggplant" classname="com.google.samples.apps.sunflower.RobolectricGardenActivityTest2" time="13.568"/>
+  <system-out><![CDATA[Downloading from maven 
+[Robolectric] com.google.samples.apps.sunflower.RobolectricGardenActivityTest2.gardenActivityTest2: sdk=28; resources=BINARY
+Called loadFromPath(/system/framework/framework-res.apk, true); mode=binary sdk=28
+***goPlantList
+***showPlantDetail
+***addToMyGarden
+***goBackPlantList
+***goMyGarden
+***assertPlanted
+[Robolectric] com.google.samples.apps.sunflower.RobolectricGardenActivityTest2.gardenActivityTest_Eggplant: sdk=28; resources=BINARY
+***goPlantList
+***showPlantDetail
+***addToMyGarden
+***goBackPlantList
+***goMyGarden
+***assertPlanted
+]]></system-out>
+  <system-err><![CDATA[[Robolectric] WARN: Android SDK 29 requires Java 9 (have Java 8). Tests won't be run on SDK 29 unless explicitly requested.
+Downloading: org/robolectric/android-all/9-robolectric-4913185-2/android-all-9-robolectric-4913185-2.pom from repository sonatype at https://oss.sonatype.org/content/groups/public/
+Transferring 2K from sonatype
+Downloading: org/sonatype/oss/oss-parent/9/oss-parent-9.pom from repository sonatype at https://oss.sonatype.org/content/groups/public/
+Transferring 6K from sonatype
+Downloading: org/robolectric/android-all/9-robolectric-4913185-2/android-all-9-robolectric-4913185-2.jar from repository sonatype at https://oss.sonatype.org/content/groups/public/
+Transferring 118099K from sonatype
+]]></system-err>
+</testsuite>
