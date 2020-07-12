@@ -27,4 +27,11 @@ describe('parse snapshot', () => {
 
     expect(parsed).toMatchSnapshot()
   })
+
+  it('Android robolectric success xml', async () => {
+    const xml = fs.readFileSync(fixturePath('android-robolectric-success.xml'))
+    const parsed = await junit2json.parse(xml)
+
+    expect(parsed).toMatchSnapshot()
+  })
 })

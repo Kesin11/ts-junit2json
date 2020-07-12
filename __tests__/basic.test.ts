@@ -1,6 +1,6 @@
 import * as junit2json from '../src/index'
 
-describe('convert xml2js output', () => {
+describe('Convert xml2js output tests', () => {
   it('basic', async () => {
     const xml = `
     <?xml version="1.0" encoding="UTF-8"?>
