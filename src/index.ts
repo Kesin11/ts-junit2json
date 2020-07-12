@@ -41,18 +41,13 @@ export type TestCase = {
   "system-err"?: string[]
 }
 
-export const parse = async (xmlString: xml2js.convertableToString): Promise<TestSuites> => {
-  const result = await xml2js.parseStringPromise(xmlString, {
+export const parse = async (xmlString: xml2js.convertableToString, xml2jsOptions?: xml2js.OptionsV2): Promise<TestSuites> => {
+  const options = xml2jsOptions ?? {
     attrValueProcessors: [xml2js.processors.parseNumbers]
-  })
-
-  return _parse(result['testsuites']) as Promise<TestSuites>
-}
-
-export const parseWithOptions = async (xmlString: xml2js.convertableToString, options: xml2js.OptionsV2): Promise<any> => {
+  }
   const result = await xml2js.parseStringPromise(xmlString, options)
 
-  return _parse(result['testsuites']) as Promise<any>
+  return _parse(result['testsuites']) as Promise<TestSuites>
 }
 
 type ObjOrArray = {[key: string]: any } | Array<ObjOrArray>
