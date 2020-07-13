@@ -1,3 +1,19 @@
+# [2.0.0](https://github.com/Kesin11/ts-junit2json/compare/v1.0.2...v2.0.0) (2020-07-13)
+
+
+### Features
+
+* Remove parseWithOptions() ([25be28b](https://github.com/Kesin11/ts-junit2json/commit/25be28b5e1743611ae1b0280b27d877fa0a9c1ad))
+* Support XML that has not testsuites tag ([3dce88e](https://github.com/Kesin11/ts-junit2json/commit/3dce88ebfdda57882ec014fd917865c16c20c3d0))
+
+
+### BREAKING CHANGES
+
+* parse() will return `Promise<TestSuites> | Promise<TestSuite>` type now
+* Fix parse() accepting xml2jsOptions
+
+
+
 ## [1.0.2](https://github.com/Kesin11/ts-junit2json/compare/v1.0.1...v1.0.2) (2020-06-09)
 
 
