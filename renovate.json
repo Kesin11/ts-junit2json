@@ -1,13 +1,28 @@
 {
   "extends": [
-    "config:semverAllMonthly",
+    "config:base",
     ":label(renovate)",
-    ":timezone(Asia/Tokyo)"
+    ":dependencyDashboard",
+    ":timezone(Asia/Tokyo)",
+    ":unpublishSafe",
+    ":enableVulnerabilityAlerts",
+    ":semanticCommitTypeAll(chore)",
+    "schedule:monthly"
   ],
-  "npm": {
-    "extends": [
-      ":automergeMinor",
-      ":unpublishSafe"
-    ]
-  }
+  "packageRules": [
+    {
+      "depTypeList": ["devDependencies"],
+      "separateMajorMinor": false,
+      "extends": [
+        ":automergeMajor"
+      ]
+    },
+    {
+      "depTypeList": ["dependencies"],
+      "separateMajorMinor": false,
+      "extends": [
+        ":automergeMajor"
+      ]
+    }
+  ]
 }
