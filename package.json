@@ -42,7 +42,7 @@
     "@types/jest": "26.0.14",
     "@types/node": "14.11.2",
     "@types/yargs": "15.0.7",
-    "jest": "26.2.2",
+    "jest": "26.4.2",
     "jest-junit": "11.1.0",
     "rimraf": "3.0.2",
     "shipjs": "0.22.0",
