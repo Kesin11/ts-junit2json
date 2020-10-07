@@ -1,3 +1,11 @@
+## [2.0.1](https://github.com/Kesin11/ts-junit2json/compare/v2.0.0...v2.0.1) (2020-10-07)
+
+Bump dependencies to fix security vulnerability.
+
+* npm audit fix ([977bd8c](https://github.com/Kesin11/ts-junit2json/commit/977bd8c99fd569527f7a9f6411092e52c0aea98e))
+* bump node-fetch from 2.6.0 to 2.6.1 [#28](https://github.com/Kesin11/ts-junit2json/pull/28)
+
+
 # [2.0.0](https://github.com/Kesin11/ts-junit2json/compare/v1.0.2...v2.0.0) (2020-07-13)
 
 
