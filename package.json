@@ -46,7 +46,7 @@
     "jest-junit": "11.1.0",
     "rimraf": "3.0.2",
     "shipjs": "0.23.0",
-    "ts-jest": "26.4.3",
+    "ts-jest": "26.4.4",
     "typescript": "3.9.7"
   },
   "jest-junit": {
