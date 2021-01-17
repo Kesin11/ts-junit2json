@@ -1,3 +1,12 @@
+## [2.0.2](https://github.com/Kesin11/ts-junit2json/compare/v2.0.1...v2.0.2) (2021-01-17)
+
+
+### Bug Fixes
+
+* npm audit fix ([0b88e44](https://github.com/Kesin11/ts-junit2json/commit/0b88e441d077f14e0443b7260393b65b0ff78335))
+
+
+
 ## [2.0.1](https://github.com/Kesin11/ts-junit2json/compare/v2.0.0...v2.0.1) (2020-10-07)
 
 Bump dependencies to fix security vulnerability.
