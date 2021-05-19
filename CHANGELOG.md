@@ -1,3 +1,8 @@
+## [2.0.3](https://github.com/Kesin11/ts-junit2json/compare/v2.0.2...v2.0.3) (2021-05-19)
+
+Bump dependencies to fix security vulnerability.
+
+
 ## [2.0.2](https://github.com/Kesin11/ts-junit2json/compare/v2.0.1...v2.0.2) (2021-01-17)
 
 
