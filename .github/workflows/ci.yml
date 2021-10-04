@@ -7,6 +7,7 @@ jobs:
     strategy:
       matrix:
         container: ["node:current", "node:lts"]
+      fail-fast: false
 
     runs-on: ubuntu-latest
     container:
@@ -14,6 +15,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Show node env
+      run: |
+        node -v
+        npm -v
     - run: npm ci
     - run: npm run test
     - uses: actions/upload-artifact@v2
@@ -25,6 +30,7 @@ jobs:
     strategy:
       matrix:
         container: ["node:current", "node:lts"]
+      fail-fast: false
 
     runs-on: ubuntu-latest
     container:
@@ -32,6 +38,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Show node env
+      run: |
+        node -v
+        npm -v
     - run: npm ci
     - run: npm run build
 
