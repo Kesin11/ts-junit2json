@@ -1,3 +1,12 @@
+## [2.0.5](https://github.com/Kesin11/ts-junit2json/compare/v2.0.4...v2.0.5) (2021-10-04)
+
+
+### Bug Fixes
+
+* CLI does not work when no -f option ([d5f13ec](https://github.com/Kesin11/ts-junit2json/commit/d5f13ecb2d3e5829827eb81e35c8434f7732dee1))
+
+
+
 ## [2.0.4](https://github.com/Kesin11/ts-junit2json/compare/v2.0.3...v2.0.4) (2021-10-02)
 
 Bump dependencies
