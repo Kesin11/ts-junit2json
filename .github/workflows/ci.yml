@@ -7,6 +7,7 @@ jobs:
     strategy:
       matrix:
         container: ["node:current", "node:lts"]
+      fail-fast: false
 
     runs-on: ubuntu-latest
     container:
@@ -14,9 +15,37 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Show node env
+      run: |
+        node -v
+        npm -v
     - run: npm ci
     - run: npm run test
     - uses: actions/upload-artifact@v2
       with:
         name: junit test reports
         path: junit
+
+  cli_test:
+    strategy:
+      matrix:
+        container: ["node:current", "node:lts"]
+      fail-fast: false
+
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.container }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Show node env
+      run: |
+        node -v
+        npm -v
+    - run: npm ci
+    - run: npm run build
+
+    - name: Exec with no option
+      run: node ./dist/cli.js __tests__/fixtures/android-robolectric-success.xml
+    - name: Exec with --filter
+      run: node ./dist/cli.js -f system-out __tests__/fixtures/android-robolectric-success.xml | grep -v system-out
