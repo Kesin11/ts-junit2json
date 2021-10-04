@@ -16,7 +16,7 @@ const argv = yargs
       p: { type: 'boolean', alias: 'pretty', describe: 'Output pretty JSON' },
       f: { type: 'string', alias: 'filter-tags', describe: 'Filter XML tag names' },
     })
-    yargs.coerce('f', (str) => str.split(','))
+    yargs.coerce('f', (filter?: string) => filter?.split(',') )
     yargs.positional('path', {
       describe: 'JUnit XML path',
       type: 'string'
