@@ -20,3 +20,22 @@ jobs:
       with:
         name: junit test reports
         path: junit
+
+  cli_test:
+    strategy:
+      matrix:
+        container: ["node:current", "node:lts"]
+
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ matrix.container }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm ci
+    - run: npm run build
+
+    - name: Exec with no option
+      run: node ./dist/cli.js __tests__/fixtures/android-robolectric-success.xml
+    - name: Exec with --filter
+      run: node ./dist/cli.js -f system-out __tests__/fixtures/android-robolectric-success.xml | grep -v system-out
