@@ -36,12 +36,12 @@
   "dependencies": {
     "@types/xml2js": "0.4.9",
     "xml2js": "0.4.23",
-    "yargs": "17.2.1"
+    "yargs": "17.3.1"
   },
   "devDependencies": {
     "@types/jest": "27.0.3",
     "@types/node": "16.11.17",
-    "@types/yargs": "17.0.7",
+    "@types/yargs": "17.0.8",
     "jest": "27.4.3",
     "jest-junit": "13.0.0",
     "rimraf": "3.0.2",
