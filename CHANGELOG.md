@@ -1,3 +1,7 @@
+## [2.0.6](https://github.com/Kesin11/ts-junit2json/compare/v2.0.5...v2.0.6) (2022-01-19)
+
+
+
 ## [2.0.5](https://github.com/Kesin11/ts-junit2json/compare/v2.0.4...v2.0.5) (2021-10-04)
 
 
