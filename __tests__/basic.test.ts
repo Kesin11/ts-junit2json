@@ -29,7 +29,7 @@ describe('Convert xml2js output tests', () => {
         testsuite: [
           { failures: 1, tests: 2 },
         ]
-    })
+    } as junit2json.TestSuites)
   })
 
   it('array with string array', async () => {
@@ -37,7 +37,9 @@ describe('Convert xml2js output tests', () => {
     <?xml version="1.0" encoding="UTF-8"?>
     <testsuites>
       <testsuite tests="1">
-        <failure>inner text</failure>
+        <testcase>
+          <failure>inner text</failure>
+        </testcase>
       </testsuite>
     </testsuites>
     `
@@ -47,12 +49,14 @@ describe('Convert xml2js output tests', () => {
         testsuite: [
           {
             tests: 1,
-            failure: [
-              { inner: 'inner text' }
-            ]
+            testcase: [{
+              failure: [
+                { inner: 'inner text' }
+              ]
+            }],
           },
         ]
-    })
+    } as junit2json.TestSuites)
   })
 
   it('inner', async () => {
@@ -60,7 +64,9 @@ describe('Convert xml2js output tests', () => {
     <?xml version="1.0" encoding="UTF-8"?>
     <testsuites>
       <testsuite tests="1">
-        <failure name="hoge">failure text</failure>
+        <testcase>
+          <failure message="hoge">failure text</failure>
+        </testcase>
       </testsuite>
     </testsuites>
     `
@@ -69,12 +75,14 @@ describe('Convert xml2js output tests', () => {
     expect(parsed).toEqual({
       testsuite: [{
         tests: 1,
-        failure: [{
-          name: 'hoge',
-          inner: 'failure text'
-        }]
+        testcase: [{
+          failure: [{
+            message: 'hoge',
+            inner: 'failure text'
+          }]
+        }],
       }]
-    })
+    } as junit2json.TestSuites)
   })
 
   it('system-out', async () => {
@@ -96,7 +104,7 @@ describe('Convert xml2js output tests', () => {
           "system-out": [ "system out text" ]
         }],
       }]
-    })
+    } as junit2json.TestSuites)
   })
 
   it('system-error', async () => {
@@ -118,6 +126,6 @@ describe('Convert xml2js output tests', () => {
           "system-err": [ "system error text" ]
         }],
       }]
-    })
+    } as junit2json.TestSuites)
   })
 })
