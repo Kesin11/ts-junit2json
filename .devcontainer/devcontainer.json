@@ -1,17 +1,24 @@
-// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.122.1/containers/typescript-node-12
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/typescript-node
 {
-	"name": "Node.js 12 & TypeScript",
-	"dockerFile": "Dockerfile",
+	"name": "Node.js & TypeScript",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick a Node version: 16, 14, 12.
+		// Append -bullseye or -buster to pin to an OS version.
+		// Use -bullseye variants on local on arm64/Apple Silicon.
+		"args": { 
+			"VARIANT": "16-bullseye"
+		}
+	},
 
 	// Set *default* container specific settings.json values on container create.
-	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash"
-	},
+	"settings": {},
+
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"dbaeumer.vscode-eslint",
+		"dbaeumer.vscode-eslint"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -20,6 +27,6 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "npm ci",
 
-	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "node"
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node"
 }
