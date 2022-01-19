@@ -1,56 +1,62 @@
 import xml2js from 'xml2js'
 
-export type TestSuites = {
-  testsuite: TestSuite[]
-  name?: string
-  time?: number
-  tests?: number
-  failures?: number
-  errors?: number
-  disabled?: number
-}
+type Maybe<T> = T | null
 
-export type TestSuite = {
-  testcase: TestCase[]
-  name: string
-  tests: number
-  failures?: number
-  errors?: number
-  time?: number
-  disabled?: number
-  skipped?: number
-  timestamp?: string
-  hostname?: string
-  id?: string
-  package?: string
-  properties?: Array< {name: string, value: string } >
-  "system-out"?: string[]
-  "system-err"?: string[]
-}
+export type TestSuites = Readonly<{
+  testsuite?: Maybe<readonly TestSuite[]>
+  name?: Maybe<string>
+  time?: Maybe<number>
+  tests?: Maybe<number>
+  failures?: Maybe<number>
+  errors?: Maybe<number>
+  disabled?: Maybe<number>
+}>
 
-export type TestCase = {
-  name: string
-  classname: string
-  assertions?: number
-  time?: number
-  status?: string
-  skipped?: Array<{ message?: string }>
-  error?: Array<{ message?: string, type?: string, inner?: string }>
-  failure?: Array<{ message?: string, type?: string, inner?: string }>
-  "system-out"?: string[]
-  "system-err"?: string[]
-}
+export type TestCase = Readonly<{
+  name?: Maybe<string>
+  classname?: Maybe<string>
+  assertions?: Maybe<number>
+  time?: Maybe<number>
+  status?: Maybe<string>
+  skipped?: Maybe<readonly Skipped[]>
+  error?: Maybe<readonly Details[]>
+  failure?: Maybe<readonly Details[]>
+  "system-out"?: Maybe<string[]>
+  "system-err"?: Maybe<string[]>
+}>
 
-export const parse = async (xmlString: xml2js.convertableToString, xml2jsOptions?: xml2js.OptionsV2): Promise<TestSuites|TestSuite> => {
+export type TestSuite = Readonly<{
+  testcase?: Maybe<readonly TestCase[]>
+  name?: Maybe<string>
+  tests?: Maybe<number>
+  failures?: Maybe<number>
+  errors?: Maybe<number>
+  time?: Maybe<number>
+  disabled?: Maybe<number>
+  skipped?: Maybe<number>
+  timestamp?: Maybe<string>
+  hostname?: Maybe<string>
+  id?: Maybe<string>
+  package?: Maybe<string>
+  properties?: Maybe<readonly Property[]>
+  "system-out"?: Maybe<readonly string[]>
+  "system-err"?: Maybe<readonly string[]>
+}>
+
+export type Property = Readonly<{ name?: Maybe<string>, value?: Maybe<string> }>
+export type Skipped = Readonly<{ message?: Maybe<string> }>
+export type Details = Readonly<{ message?: Maybe<string>, type?: Maybe<string>, inner?: Maybe<string> }>
+
+export const parse = async (xmlString: xml2js.convertableToString, xml2jsOptions?: xml2js.OptionsV2): Promise<TestSuites|TestSuite|undefined> => {
   const options = xml2jsOptions ?? {
     attrValueProcessors: [xml2js.processors.parseNumbers]
   }
   const result = await xml2js.parseStringPromise(xmlString, options)
 
-  if (result['testsuites']) {
+  if ('testsuites' in result) {
     return _parse(result['testsuites']) as Promise<TestSuites>
   }
-  else {
+  else if('testsuite' in result) {
     return _parse(result['testsuite']) as Promise<TestSuite>
   }
 }
