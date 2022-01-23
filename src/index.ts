@@ -59,11 +59,11 @@ type ObjOrArray = {[key: string]: any } | Array<ObjOrArray>
 const _parse = (objOrArray: ObjOrArray): ObjOrArray => {
   if (Array.isArray(objOrArray)) {
     return objOrArray.map((_obj: ObjOrArray) => {
-      // 中身がさらにネストされた配列 or $キーのobjectなら再起
+      // Do recursive call when _obj is nested array OR object that key is "$"
       if (Array.isArray(_obj) || typeof(_obj) === 'object') {
         return _parse(_obj)
       }
-      // 配列の中身が単なる文字列ならinnerキーを自分で付けてobjectで返す
+      // Return object that has only "inner" field when _obj is String
       return { inner: _obj }
     })
   }
