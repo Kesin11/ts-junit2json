@@ -60,7 +60,7 @@ export const parse = async (xmlString: xml2js.convertableToString, xml2jsOptions
   }
 }
 
-type ObjOrArray = {[key: string]: any } | Array<ObjOrArray>
+type ObjOrArray = Record<string, any> | Array<ObjOrArray>
 const _parse = (objOrArray: ObjOrArray): ObjOrArray => {
   if (Array.isArray(objOrArray)) {
     return objOrArray.map((_obj: ObjOrArray) => {
@@ -72,7 +72,7 @@ const _parse = (objOrArray: ObjOrArray): ObjOrArray => {
       return { inner: _obj }
     })
   }
-  let output: {[key: string]: any} = {}
+  let output: Record<string, any> = {}
   Object.keys(objOrArray).forEach((key) => {
     const nested = objOrArray[key]
     if (key === '$') {
