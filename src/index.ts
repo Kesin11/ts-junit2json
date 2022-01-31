@@ -2,31 +2,31 @@ import xml2js from 'xml2js'
 
 type Maybe<T> = T | null
 
-export type TestSuites = Readonly<{
-  testsuite?: Maybe<readonly TestSuite[]>
+export type TestSuites = {
+  testsuite?: Maybe<TestSuite[]>
   name?: Maybe<string>
   time?: Maybe<number>
   tests?: Maybe<number>
   failures?: Maybe<number>
   errors?: Maybe<number>
   disabled?: Maybe<number>
-}>
+}
 
-export type TestCase = Readonly<{
+export type TestCase = {
   name?: Maybe<string>
   classname?: Maybe<string>
   assertions?: Maybe<number>
   time?: Maybe<number>
   status?: Maybe<string>
-  skipped?: Maybe<readonly Skipped[]>
-  error?: Maybe<readonly Details[]>
-  failure?: Maybe<readonly Details[]>
+  skipped?: Maybe<Skipped[]>
+  error?: Maybe<Details[]>
+  failure?: Maybe<Details[]>
   "system-out"?: Maybe<string[]>
   "system-err"?: Maybe<string[]>
-}>
+}
 
-export type TestSuite = Readonly<{
-  testcase?: Maybe<readonly TestCase[]>
+export type TestSuite = {
+  testcase?: Maybe<TestCase[]>
   name?: Maybe<string>
   tests?: Maybe<number>
   failures?: Maybe<number>
@@ -38,14 +38,14 @@ export type TestSuite = Readonly<{
   hostname?: Maybe<string>
   id?: Maybe<string>
   package?: Maybe<string>
-  properties?: Maybe<readonly Property[]>
-  "system-out"?: Maybe<readonly string[]>
-  "system-err"?: Maybe<readonly string[]>
-}>
+  properties?: Maybe<Property[]>
+  "system-out"?: Maybe<string[]>
+  "system-err"?: Maybe<string[]>
+}
 
-export type Property = Readonly<{ name?: Maybe<string>, value?: Maybe<string> }>
-export type Skipped = Readonly<{ message?: Maybe<string> }>
-export type Details = Readonly<{ message?: Maybe<string>, type?: Maybe<string>, inner?: Maybe<string> }>
+export type Property = { name?: Maybe<string>, value?: Maybe<string> }
+export type Skipped = { message?: Maybe<string> }
+export type Details = { message?: Maybe<string>, type?: Maybe<string>, inner?: Maybe<string> }
 
 export const parse = async (xmlString: xml2js.convertableToString, xml2jsOptions?: xml2js.OptionsV2): Promise<TestSuites|TestSuite|undefined> => {
   const options = xml2jsOptions ?? {
