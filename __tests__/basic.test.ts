@@ -20,6 +20,17 @@ describe('Convert xml2js output tests', () => {
     expect(parsed).toEqual(undefined)
   })
 
+  it('returns undefined when a property is absent', async () => {
+    const xml = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <testsuites>
+    </testsuites>
+    `
+    const parsed = await junit2json.parse(xml) as junit2json.TestSuite 
+
+    expect(parsed.name).toEqual(undefined)
+  })
+
   it('basic', async () => {
     const xml = `
     <?xml version="1.0" encoding="UTF-8"?>

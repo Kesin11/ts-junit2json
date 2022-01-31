@@ -1,51 +1,49 @@
 import xml2js from 'xml2js'
 
-type Maybe<T> = T | null
-
 export type TestSuites = {
-  testsuite?: Maybe<TestSuite[]>
-  name?: Maybe<string>
-  time?: Maybe<number>
-  tests?: Maybe<number>
-  failures?: Maybe<number>
-  errors?: Maybe<number>
-  disabled?: Maybe<number>
+  testsuite?: TestSuite[]
+  name?: string
+  time?: number
+  tests?: number
+  failures?: number
+  errors?: number
+  disabled?: number
 }
 
 export type TestCase = {
-  name?: Maybe<string>
-  classname?: Maybe<string>
-  assertions?: Maybe<number>
-  time?: Maybe<number>
-  status?: Maybe<string>
-  skipped?: Maybe<Skipped[]>
-  error?: Maybe<Details[]>
-  failure?: Maybe<Details[]>
-  "system-out"?: Maybe<string[]>
-  "system-err"?: Maybe<string[]>
+  name?: string
+  classname?: string
+  assertions?: number
+  time?: number
+  status?: string
+  skipped?: Skipped[]
+  error?: Details[]
+  failure?: Details[]
+  "system-out"?: string[]
+  "system-err"?: string[]
 }
 
 export type TestSuite = {
-  testcase?: Maybe<TestCase[]>
-  name?: Maybe<string>
-  tests?: Maybe<number>
-  failures?: Maybe<number>
-  errors?: Maybe<number>
-  time?: Maybe<number>
-  disabled?: Maybe<number>
-  skipped?: Maybe<number>
-  timestamp?: Maybe<string>
-  hostname?: Maybe<string>
-  id?: Maybe<string>
-  package?: Maybe<string>
-  properties?: Maybe<Property[]>
-  "system-out"?: Maybe<string[]>
-  "system-err"?: Maybe<string[]>
+  testcase?: TestCase[]
+  name?: string
+  tests?: number
+  failures?: number
+  errors?: number
+  time?: number
+  disabled?: number
+  skipped?: number
+  timestamp?: string
+  hostname?: string
+  id?: string
+  package?: string
+  properties?: Property[]
+  "system-out"?: string[]
+  "system-err"?: string[]
 }
 
-export type Property = { name?: Maybe<string>, value?: Maybe<string> }
-export type Skipped = { message?: Maybe<string> }
-export type Details = { message?: Maybe<string>, type?: Maybe<string>, inner?: Maybe<string> }
+export type Property = { name?: string, value?: string }
+export type Skipped = { message?: string }
+export type Details = { message?: string, type?: string, inner?: string }
 
 export const parse = async (xmlString: xml2js.convertableToString, xml2jsOptions?: xml2js.OptionsV2): Promise<TestSuites|TestSuite|undefined|null> => {
   const options = xml2jsOptions ?? {
