@@ -47,11 +47,12 @@ export type Property = { name?: Maybe<string>, value?: Maybe<string> }
 export type Skipped = { message?: Maybe<string> }
 export type Details = { message?: Maybe<string>, type?: Maybe<string>, inner?: Maybe<string> }
 
-export const parse = async (xmlString: xml2js.convertableToString, xml2jsOptions?: xml2js.OptionsV2): Promise<TestSuites|TestSuite|undefined> => {
+export const parse = async (xmlString: xml2js.convertableToString, xml2jsOptions?: xml2js.OptionsV2): Promise<TestSuites|TestSuite|undefined|null> => {
   const options = xml2jsOptions ?? {
     attrValueProcessors: [xml2js.processors.parseNumbers]
   }
   const result = await xml2js.parseStringPromise(xmlString, options)
+  if (result === null) return null
 
   if ('testsuites' in result) {
     return _parse(result['testsuites']) as Promise<TestSuites>

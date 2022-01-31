@@ -1,6 +1,25 @@
 import * as junit2json from '../src/index'
 
 describe('Convert xml2js output tests', () => {
+  it('returns null when XML is empty', async () => {
+    const xml = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    `
+    const parsed = await junit2json.parse(xml)
+
+    expect(parsed).toEqual(null)
+  })
+
+  it('returns undefined when XML is not a recognized element', async () => {
+    const xml = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <unrecognized />
+    `
+    const parsed = await junit2json.parse(xml)
+
+    expect(parsed).toEqual(undefined)
+  })
+
   it('basic', async () => {
     const xml = `
     <?xml version="1.0" encoding="UTF-8"?>
