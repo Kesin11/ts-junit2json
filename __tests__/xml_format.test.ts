@@ -10,7 +10,7 @@ describe('Parse various xml format tests', () => {
       </testsuite>
     </testsuites>
     `
-    
+
     const parsed = await junit2json.parse(xml)
 
     expect(parsed).toEqual({
@@ -34,7 +34,7 @@ describe('Parse various xml format tests', () => {
           }]
         },
       ]
-    })
+    } as junit2json.TestSuites)
   })
 
   it('testsuite root', async () => {
@@ -44,7 +44,7 @@ describe('Parse various xml format tests', () => {
       </testcase>
     </testsuite>
     `
-    
+
     const parsed = await junit2json.parse(xml)
 
     expect(parsed).toEqual({
@@ -60,7 +60,7 @@ describe('Parse various xml format tests', () => {
         name: "testcase",
         time: 1
       }]
-    })
+    } as junit2json.TestSuite)
 
   })
 })
