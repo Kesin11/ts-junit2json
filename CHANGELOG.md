@@ -1,3 +1,7 @@
+# [3.0.0](https://github.com/Kesin11/ts-junit2json/compare/v2.0.6...v3.0.0) (2022-02-02)
+
+
+
 ## [2.0.6](https://github.com/Kesin11/ts-junit2json/compare/v2.0.5...v2.0.6) (2022-01-19)
 Remove shipjs from package.json [#130](https://github.com/Kesin11/ts-junit2json/issues/120) 
 
