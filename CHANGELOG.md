@@ -1,3 +1,11 @@
+# [3.0.0](https://github.com/Kesin11/ts-junit2json/compare/v2.0.6...v3.0.0) (2022-02-02)
+
+### BREAKING CHANGES
+Strict typing @aslakhellesoy ([#124](https://github.com/Kesin11/ts-junit2json/pull/124))
+
+- `parse()` returns `Promise<TestSuites|TestSuite|undefined|null>` type.
+- All properties of `TestSuites` and `TestSuite` are changed to optional.
+
 ## [2.0.6](https://github.com/Kesin11/ts-junit2json/compare/v2.0.5...v2.0.6) (2022-01-19)
 Remove shipjs from package.json [#130](https://github.com/Kesin11/ts-junit2json/issues/120) 
 
