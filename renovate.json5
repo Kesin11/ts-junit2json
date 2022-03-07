@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "github>Kesin11/renovate-config:oss",
+    "schedule:monthly"
+  ]
+}
