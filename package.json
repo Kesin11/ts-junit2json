@@ -34,14 +34,14 @@
   },
   "homepage": "https://github.com/Kesin11/ts-junit2json#readme",
   "dependencies": {
-    "@types/xml2js": "0.4.9",
+    "@types/xml2js": "0.4.11",
     "xml2js": "0.4.23",
     "yargs": "17.3.1"
   },
   "devDependencies": {
     "@types/jest": "27.4.1",
-    "@types/node": "16.11.26",
-    "@types/yargs": "17.0.8",
+    "@types/node": "16.11.27",
+    "@types/yargs": "17.0.10",
     "jest": "27.5.1",
     "jest-junit": "13.1.0",
     "rimraf": "3.0.2",
