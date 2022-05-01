@@ -47,6 +47,7 @@ jobs:
           npm run build
           npm version $VERSION
           npm publish
+          git push origin master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
