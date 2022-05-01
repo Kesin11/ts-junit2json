@@ -15,9 +15,7 @@
     "build": "tsc",
     "test": "jest",
     "test:watch": "jest --watch",
-    "release:prepublish": "npm run clean && npm run build && npm version prerelease && npm publish --tag=beta",
-    "release:prepare": "npx shipjs prepare",
-    "release:trigger": "npx shipjs trigger"
+    "release:prepublish": "npm run clean && npm run build && npm version prerelease && npm publish --tag=beta"
   },
   "repository": {
     "type": "git",
