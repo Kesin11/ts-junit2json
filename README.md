@@ -2,19 +2,19 @@
 [![junit2json](https://badgen.net/npm/v/junit2json)](https://www.npmjs.com/package/junit2json)
 ![CI](https://github.com/Kesin11/ts-junit2json/workflows/Node%20CI/badge.svg)
 
-ts-juni2json provides a converter to convert JUnit XML format to JSON and it written by TypeScript.
+ts-juni2json provides a converter that convert JUnit XML format to JSON. Also provides TypeScript types definition.
 
 # Purpose
-ts-junit2json is created for storing test result data in BigQuery.
+ts-junit2json is created for uploading test result data to BigQuery.
 
-Many languages and test frameworks support output tests result data as JUnit XML format that de fact standard in today. On the other hand, BigQuery does not support to import XML but does support JSON.
+Many languages and test frameworks supporting output test result data as JUnit XML format that de fact standard in today. On the other hand, BigQuery does not support to import XML but does support JSON.
 
-You notice that you can store data in BigQuery with converting XML to JSON. ts-junit2json provides a simple JUnit XML to JSON converter for that purpose.
+You notice that you can upload test data to BigQuery with converting XML to JSON. ts-junit2json provides a simple JUnit XML to JSON converter for that purpose.
 
-# What is deference for other XML to JSON tools?
+# What is difference for other XML to JSON tools?
 The purpose of other similar tools is handling common XML format. As a result, output JSON structure is sometimes redundant and not suitable for store in BigQuery.
 
-ts-junit2json only supports JUnit XML schema, but reconstructs original XML structure into a BigQuery friendly structure. More detail will be explaiend later.
+On the other hand, ts-junit2json only supports JUnit XML schema, but restructures original XML structure into a BigQuery friendly structure. Details are described below.
 
 # Usage
 ```ts
@@ -103,10 +103,11 @@ console.log(JSON.stringify(output, replacer, 2))
 ```
 
 # Notice
-ts-junit2json reconstructs some tags constructure for simple and consitent structure.
+ts-junit2json changes the structure of some tags for simpler and more consistent output.
 
-- Tag inner text are store to the value of 'inner' key.
-  - The only exceptions are `<system-out>` and `<system-err>`, whose inner text are store to the string array.
+- XML Tag inner text is set to value of 'inner' key.
+  - The only exceptions are `<system-out>` and `<system-err>`. These inner text is set to the string array.
+  - Example: [snapshot.test.ts.snap](./__tests__/__snapshots__/snapshot.test.ts.snap)
 
 # CLI
 ```bash
@@ -135,7 +136,7 @@ Examples:
   junit.xml                                 <system-out> and <system-err> tags.
 ```
 
-## Example with `jq`
+## CLI with `jq` examples
 Count testcases.
 
 ```bash
@@ -153,6 +154,12 @@ Show testcase classnames.
 ```bash
 npx junit2json junit.xml | jq .testsuite[].testcase[].classname
 ```
+
+# References
+JUnit XML format
+
+- https://llg.cubic.org/docs/junit/
+- https://github.com/junit-team/junit5/blob/main/platform-tests/src/test/resources/jenkins-junit.xsd
 
 # License
 MIT
