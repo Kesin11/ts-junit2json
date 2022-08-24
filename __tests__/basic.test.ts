@@ -158,4 +158,28 @@ describe('Convert xml2js output tests', () => {
       }]
     } as junit2json.TestSuites)
   })
+
+  it('parses properties', async () => {
+    const xml = `
+    <?xml version="1.0" encoding="UTF-8"?>
+    <testsuites>
+      <testsuite>
+        <properties>
+          <property name="hello" value="bonjour"/>
+          <property name="world" value="monde"/>
+        </properties>
+      </testsuite>
+    </testsuites>
+    `
+    const parsed = await junit2json.parse(xml) as junit2json.TestSuites
+
+    expect(parsed).toEqual({
+      testsuite: [{
+        properties: [
+          {name: "hello", value: "bonjour"},
+          {name: "world", value: "monde"}
+        ]
+      }]
+    })
+  })
 })

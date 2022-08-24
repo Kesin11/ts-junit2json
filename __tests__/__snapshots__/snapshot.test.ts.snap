@@ -6,11 +6,7 @@ Object {
   "failures": 0,
   "hostname": "fv-az88",
   "name": "com.google.samples.apps.sunflower.RobolectricGardenActivityTest2",
-  "properties": Array [
-    Object {
-      "inner": "",
-    },
-  ],
+  "properties": Array [],
   "skipped": 0,
   "system-err": Array [
     "[Robolectric] WARN: Android SDK 29 requires Java 9 (have Java 8). Tests won't be run on SDK 29 unless explicitly requested.
