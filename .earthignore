@@ -1,0 +1,4 @@
+# Generate when development
+node_modules/
+dist/
+junit/
