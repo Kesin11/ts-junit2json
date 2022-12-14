@@ -17,5 +17,9 @@ publish:
   COPY --dir . .
   RUN git config user.name "github-actions" && \
       git config user.email "github-actions@github.com"
-  RUN npm version prerelease && \
+  RUN git restore .
+  RUN --no-cache --secret NODE_AUTH_TOKEN \
+      echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > $HOME/.npmrc && \
+      npm version prerelease && \
       npm publish --tag=beta
+  # RUN git push
