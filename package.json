@@ -17,7 +17,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "release:prepublish": "npm run clean && npm run build && npm version prerelease && npm publish --tag=beta",
-    "release": "earthly --secret NODE_AUTH_TOKEN +publish"
+    "release": "earthly --secret NODE_AUTH_TOKEN --secret GITHUB_TOKEN +publish"
   },
   "repository": {
     "type": "git",
