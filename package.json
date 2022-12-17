@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/"
+    "dist/",
+    "LICENSE"
   ],
   "bin": {
     "junit2json": "dist/cli.js"
@@ -15,7 +16,8 @@
     "build": "tsc",
     "test": "jest",
     "test:watch": "jest --watch",
-    "release:prepublish": "npm run clean && npm run build && npm version prerelease && npm publish --tag=beta"
+    "release:prepublish": "npm run clean && npm run build && npm version prerelease && npm publish --tag=beta",
+    "release": "earthly --secret NODE_AUTH_TOKEN --secret GITHUB_TOKEN +publish"
   },
   "repository": {
     "type": "git",
