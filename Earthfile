@@ -14,7 +14,7 @@ build:
 
 publish:
   RUN --no-cache --secret GITHUB_TOKEN \
-      git clone --depth=1 --branch=publish_from_earthly https://github.com/Kesin11/ts-junit2json.git && \
+      git clone --depth=1 --branch=master https://github.com/Kesin11/ts-junit2json.git && \
       git config --global user.name "github-actions" && \
       git config --global user.email "github-actions@github.com" && \
       git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
@@ -26,4 +26,4 @@ publish:
       echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > $HOME/.npmrc && \
       npm version $VERSION && \
       npm publish --tag=beta
-  RUN --no-cache --secret GITHUB_TOKEN git push origin publish_from_earthly
+  RUN --no-cache --secret GITHUB_TOKEN git push origin master
