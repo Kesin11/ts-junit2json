@@ -25,5 +25,5 @@ publish:
   RUN --no-cache --secret NODE_AUTH_TOKEN \
       echo '//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}' > $HOME/.npmrc && \
       npm version $VERSION && \
-      npm publish --tag=beta
+      npm publish
   RUN --no-cache --secret GITHUB_TOKEN git push origin master
