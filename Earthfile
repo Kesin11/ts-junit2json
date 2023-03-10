@@ -1,6 +1,6 @@
 VERSION --use-cache-command 0.6
 
-FROM node:18.14.2
+FROM node:18.15.0
 WORKDIR /build
 
 build:
