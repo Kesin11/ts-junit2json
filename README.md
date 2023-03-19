@@ -4,6 +4,8 @@
 
 ts-juni2json provides a converter that convert JUnit XML format to JSON. Also provides TypeScript types definition.
 
+And also provide [CLI](#CLI) that can convert a JUnit XML to JSON.
+
 # Purpose
 ts-junit2json is created for uploading test result data to BigQuery.
 
@@ -16,9 +18,17 @@ The purpose of other similar tools is handling common XML format. As a result, o
 
 On the other hand, ts-junit2json only supports JUnit XML schema, but restructures original XML structure into a BigQuery friendly structure. Details are described below.
 
+# Installing
+```bash
+npm install junit2json
+```
+
 # Usage
+junit2json supports both ESModule and CommonJS.
+
 ```ts
-import { parse } from 'junit2json'
+import { parse } from 'junit2json' // ESM
+// const { parse } = require('junit2json') // CommonJS
 
 const main = async () => {
   const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
@@ -41,7 +51,7 @@ const main = async () => {
 main()
 ```
 
-# Sample output
+# Output sample
 ```json
 {
   "name": "gcf_junit_xml_to_bq_dummy",
@@ -137,19 +147,19 @@ Examples:
 ```
 
 ## CLI with `jq` examples
-Count testcases.
+### Count testcases
 
 ```bash
 npx junit2json junit.xml | jq .tests
 ```
 
-Show testsuite names.
+### Show testsuite names
 
 ```bash
 npx junit2json junit.xml | jq .testsuite[].name
 ```
 
-Show testcase classnames.
+### Show testcase classnames
 
 ```bash
 npx junit2json junit.xml | jq .testsuite[].testcase[].classname

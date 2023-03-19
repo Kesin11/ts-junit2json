@@ -1,4 +1,4 @@
-VERSION --use-cache-command 0.6
+VERSION 0.7
 
 FROM node:18.15.0
 WORKDIR /build
@@ -8,7 +8,7 @@ build:
   CACHE /root/.npm
   RUN npm ci
 
-  COPY --dir src tsconfig.json .
+  COPY --dir src tsconfig*.json .
   RUN npm run build
   SAVE ARTIFACT dist/ dist
 

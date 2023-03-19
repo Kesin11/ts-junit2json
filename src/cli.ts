@@ -2,7 +2,7 @@
 import fs from 'fs'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { parse } from '.'
+import { parse } from './index.js'
 
 const argv = yargs(hideBin(process.argv))
   .usage('Usage: $0 [path]')

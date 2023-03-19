@@ -1,22 +1,39 @@
 {
   "name": "junit2json",
   "version": "3.0.4",
-  "description": "JUnit XML format to JSON with TypeScript",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "description": "Convert JUnit XML format to JSON",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "default": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
     "dist/",
+    "src/",
     "LICENSE"
   ],
   "bin": {
-    "junit2json": "dist/cli.js"
+    "junit2json": "dist/cjs/cli.js"
   },
   "scripts": {
     "clean": "rimraf dist/*",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && tsconfig-to-dual-package",
     "test": "jest",
     "test:watch": "jest --watch",
-    "release:prepublish": "npm run clean && npm run build && npm version prerelease && npm publish --tag=beta",
+    "release:prepublish": "npm run clean && npm run build && npm version prerelease --no-git-tag-version && npm publish --tag=beta",
     "release": "earthly --secret NODE_AUTH_TOKEN --secret GITHUB_TOKEN +publish"
   },
   "repository": {
@@ -46,6 +63,7 @@
     "jest-junit": "15.0.0",
     "rimraf": "4.4.0",
     "ts-jest": "29.0.5",
+    "tsconfig-to-dual-package": "^1.1.1",
     "typescript": "4.9.5"
   },
   "jest-junit": {

@@ -1,4 +1,4 @@
-import * as junit2json from '../src/index'
+import * as junit2json from '../src/index.js'
 import * as fs from 'fs'
 import * as path from 'path'
 
