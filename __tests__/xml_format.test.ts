@@ -1,4 +1,4 @@
-import * as junit2json from '../src/index'
+import * as junit2json from '../src/index.js'
 
 describe('Parse various xml format tests', () => {
   it('testsuites root', async () => {

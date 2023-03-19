@@ -1,4 +1,4 @@
-import * as junit2json from '../src/index'
+import * as junit2json from '../src/index.js'
 
 describe('Convert xml2js output tests', () => {
   it('returns null when XML is empty', async () => {
