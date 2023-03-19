@@ -1,7 +1,7 @@
 {
   "name": "junit2json",
   "version": "3.0.4",
-  "description": "JUnit XML format to JSON with TypeScript",
+  "description": "Convert JUnit XML format to JSON",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
