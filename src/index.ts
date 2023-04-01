@@ -1,4 +1,5 @@
-import xml2js from 'xml2js'
+import { parseStringPromise, processors } from 'xml2js'
+import type { convertableToString, OptionsV2  } from 'xml2js'
 
 export type TestSuites = {
   testsuite?: TestSuite[]
@@ -45,11 +46,11 @@ export type Property = { name?: string, value?: string }
 export type Skipped = { message?: string }
 export type Details = { message?: string, type?: string, inner?: string }
 
-export const parse = async (xmlString: xml2js.convertableToString, xml2jsOptions?: xml2js.OptionsV2): Promise<TestSuites|TestSuite|undefined|null> => {
+export const parse = async (xmlString: convertableToString, xml2jsOptions?: OptionsV2): Promise<TestSuites|TestSuite|undefined|null> => {
   const options = xml2jsOptions ?? {
-    attrValueProcessors: [xml2js.processors.parseNumbers]
+    attrValueProcessors: [processors.parseNumbers]
   }
-  const result = await xml2js.parseStringPromise(xmlString, options)
+  const result = await parseStringPromise(xmlString, options)
   if (result === null) return null
 
   if ('testsuites' in result) {
