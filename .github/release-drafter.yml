@@ -13,6 +13,7 @@ categories:
       - 'fix'
       - 'bug'
       - 'security'
+      - 'refactor'
   - title: 'Dependencies'
     collapse-after: 3
     labels:
