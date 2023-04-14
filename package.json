@@ -64,7 +64,7 @@
     "rimraf": "4.4.1",
     "ts-jest": "29.1.0",
     "tsconfig-to-dual-package": "^1.1.1",
-    "typescript": "5.0.3"
+    "typescript": "5.0.4"
   },
   "jest-junit": {
     "suiteName": "ts-junit2json",
