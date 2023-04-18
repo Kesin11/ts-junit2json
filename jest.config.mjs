@@ -2,6 +2,7 @@
 export default {
   clearMocks: true,
   coverageDirectory: 'coverage',
+  testMatch: ["**/__tests__/**/*.ts?(x)"],
   reporters: [
     'default',
     'jest-junit',
