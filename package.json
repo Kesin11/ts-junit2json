@@ -52,7 +52,7 @@
   },
   "homepage": "https://github.com/Kesin11/ts-junit2json#readme",
   "dependencies": {
-    "@types/xml2js": "0.4.11",
+    "@types/xml2js": "0.4.12",
     "xml2js": "0.6.2",
     "yargs": "17.7.2"
   },
