@@ -31,7 +31,7 @@ jobs:
         with:
           version: latest
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: master
       # npm publish and push updated package.json
