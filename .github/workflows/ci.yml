@@ -18,7 +18,7 @@ jobs:
       image: ${{ matrix.container }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Show node env
       run: |
         node -v
@@ -41,7 +41,7 @@ jobs:
       image: ${{ matrix.container }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Show node env
       run: |
         node -v
