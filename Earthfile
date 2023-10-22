@@ -1,6 +1,6 @@
 VERSION 0.7
 
-FROM node:20.8.1
+FROM node:21.0.0
 WORKDIR /build
 
 build:
