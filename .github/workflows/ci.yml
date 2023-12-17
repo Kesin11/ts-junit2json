@@ -10,15 +10,15 @@ jobs:
   test:
     strategy:
       matrix:
-        container:
-          # - "node:current"
-          - "node:lts"
-          - "node:20"
+        container_tag:
+          # - "current"
+          - "lts"
+          - "20"
       fail-fast: false
 
     runs-on: ubuntu-latest
     container:
-      image: ${{ matrix.container }}
+      image: "node:${{ matrix.container_tag }}"
 
     steps:
     - uses: actions/checkout@v4
@@ -28,23 +28,23 @@ jobs:
         npm -v
     - run: npm ci
     - run: npm run test
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
-        name: junit test reports
+        name: "junit test reports node ${{ matrix.container_tag }}"
         path: junit
 
   cli_test:
     strategy:
       matrix:
-        container:
-          # - "node:current"
-          - "node:lts"
-          - "node:20"
+        container_tag:
+          # - "current"
+          - "lts"
+          - "20"
       fail-fast: false
 
     runs-on: ubuntu-latest
     container:
-      image: ${{ matrix.container }}
+      image: "node:${{ matrix.container_tag }}"
 
     steps:
     - uses: actions/checkout@v4
