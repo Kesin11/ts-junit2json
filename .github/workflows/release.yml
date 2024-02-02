@@ -11,7 +11,7 @@ jobs:
       tag_name: ${{ steps.release-drafter.outputs.tag_name }}
     steps:
       # Get next version
-      - uses: release-drafter/release-drafter@v5
+      - uses: release-drafter/release-drafter@v6
         id: release-drafter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -52,7 +52,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       # Publish github releases. Also tag will be created.
-      - uses: release-drafter/release-drafter@v5
+      - uses: release-drafter/release-drafter@v6
         with:
           publish: true
         env:
