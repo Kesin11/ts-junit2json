@@ -29,7 +29,7 @@ jobs:
         run: |
           export TAG_NAME=${{ needs.draft_release.outputs.tag_name }}
           echo "VERSION=${TAG_NAME:1}" >> $GITHUB_ENV
-      - uses: earthly/actions-setup@v1.0.11
+      - uses: earthly/actions-setup@v1.0.12
         with:
           version: latest
           github-token: ${{ secrets.GITHUB_TOKEN }}
