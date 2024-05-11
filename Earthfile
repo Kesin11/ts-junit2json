@@ -12,6 +12,13 @@ build:
   RUN npm run build
   SAVE ARTIFACT dist/ dist
 
+# Test publishing from local purpose
+prepublish:
+  LOCALLY
+  COPY +build/dist dist/
+  RUN npm version prerelease --no-git-tag-version && \
+      npm publish --tag=beta
+
 publish:
   LOCALLY
   ARG --required VERSION
