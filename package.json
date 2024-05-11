@@ -35,7 +35,7 @@
     "test:watch": "jest --watch",
     "integrate_test": "node --test integrate_tests/",
     "release:prepublish": "npm run clean && npm run build && npm version prerelease --no-git-tag-version && npm publish --tag=beta",
-    "release": "earthly --secret NODE_AUTH_TOKEN --secret GITHUB_TOKEN +publish"
+    "release": "earthly +publish"
   },
   "repository": {
     "type": "git",
