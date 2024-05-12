@@ -17,13 +17,13 @@ prepublish:
   LOCALLY
   COPY +build/dist dist/
   RUN npm version prerelease --no-git-tag-version && \
-      npm publish --tag=beta
+      npm publish --provenance --tag=beta
 
 publish:
   LOCALLY
   ARG --required VERSION
   COPY +build/dist dist/
   RUN npm version $VERSION && \
-      # npm publish
+      # npm publish --provenance
       npm publish --dry-run
   # RUN git push origin master
