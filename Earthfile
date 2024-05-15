@@ -24,6 +24,4 @@ publish:
   ARG --required VERSION
   COPY +build/dist dist/
   RUN npm version $VERSION && \
-      # npm publish --provenance
-      npm publish --dry-run
-  # RUN git push origin master
+      npm publish --provenance
