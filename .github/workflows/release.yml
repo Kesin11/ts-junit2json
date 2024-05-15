@@ -21,6 +21,9 @@ jobs:
     environment:
         name: prod
         url: https://www.npmjs.com/package/junit2json
+    permissions:
+      contents: write
+      id-token: write
     needs: draft_release
     if: github.event_name == 'workflow_dispatch'
     steps:
