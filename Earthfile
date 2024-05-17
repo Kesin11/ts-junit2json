@@ -15,13 +15,15 @@ build:
 # Test publishing from local purpose
 prepublish:
   LOCALLY
-  COPY +build/dist dist/
+  RUN rm -rf dist
+  COPY +build/dist dist
   RUN npm version prerelease --no-git-tag-version && \
       npm publish --provenance --tag=beta
 
 publish:
   LOCALLY
   ARG --required VERSION
-  COPY +build/dist dist/
+  RUN rm -rf dist
+  COPY +build/dist dist
   RUN npm version $VERSION && \
       npm publish --provenance
