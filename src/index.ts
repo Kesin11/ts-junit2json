@@ -1,6 +1,7 @@
 import { parseStringPromise, processors } from 'xml2js'
 import type { convertableToString, OptionsV2  } from 'xml2js'
 
+/** It represents a `<testsuites>` tag.  */
 export type TestSuites = {
   testsuite?: TestSuite[]
   name?: string
@@ -11,6 +12,7 @@ export type TestSuites = {
   disabled?: number
 }
 
+/** It represents a `<testcase>` tag.  */
 export type TestCase = {
   name?: string
   classname?: string
@@ -24,6 +26,7 @@ export type TestCase = {
   "system-err"?: string[]
 }
 
+/** It represents a `<testsuite>` tag.  */
 export type TestSuite = {
   testcase?: TestCase[]
   name?: string
@@ -42,10 +45,39 @@ export type TestSuite = {
   "system-err"?: string[]
 }
 
+/** It represents a `<properties>` tag.  */
 export type Property = { name?: string, value?: string }
+/** It represents a `<skipped>` tag.  */
 export type Skipped = { message?: string }
+/** It represents a `<failure> and <errors>` tag.  */
 export type Details = { message?: string, type?: string, inner?: string }
 
+/**
+ * Parses the given JUnit XML string into a JavaScript object representation using xml2js library.
+ * 
+ * @example Basic usage
+ * ```ts
+ * import { parse } from 'junit2json'
+ * 
+ * const junitXmlString = "..."
+ * const output = await parse(xmlString)
+ * ```
+ * 
+ * If you want to filter some tags like `<system-out>` or `<system-err>`, you can use `replacer` function argument in [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+ * 
+ * @example Filter some tags
+ * ```ts
+ * import { parse } from 'junit2json'
+ * 
+ * const junitXmlString = "..."
+ * const output = await parse(xmlString)
+ * const replacer = (key: any, value: any) => {
+ *   if (key === 'system-out' || key === 'system-err') return undefined
+ *   return value
+ * }
+ * console.log(JSON.stringify(output, replacer, 2))
+ * ```
+ */
 export const parse = async (xmlString: convertableToString, xml2jsOptions?: OptionsV2): Promise<TestSuites|TestSuite|undefined|null> => {
   const options = xml2jsOptions ?? {
     attrValueProcessors: [processors.parseNumbers]
