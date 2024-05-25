@@ -27,8 +27,13 @@ prepublish:
   RUN rm -rf dist
   COPY +build/dist dist
 
+  # Bump package.json and jsr.json then commit the changes that mimic `npm version`
   RUN npm version prerelease --no-git-tag-version && \
-      npm publish --provenance --tag=beta
+      npm run jsr:version && \
+      git add jsr.json package*.json && \
+      jq -r '.version' package.json | xargs -I {} git commit -m "{}"
+  RUN npm publish --provenance --tag=beta && \
+      npx -y jsr publish
 
 publish:
   BUILD +integate-test
@@ -38,4 +43,8 @@ publish:
   COPY +build/dist dist
 
   RUN npm version $VERSION && \
-      npm publish --provenance
+      npm run jsr:version && \
+      git add jsr.json package*.json && \
+      jq -r '.version' package.json | xargs -I {} git commit -m "{}"
+  RUN npm publish --provenance && \
+      npx -y jsr publish

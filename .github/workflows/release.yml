@@ -58,7 +58,7 @@ jobs:
           git config user.email github-actions@github.com
 
       # npm publish and push updated package.json
-      - name: Publish
+      - name: Publish to npm and jsr
         run: |
           npm run release -- --VERSION=$VERSION
           git push origin master
