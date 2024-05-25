@@ -37,7 +37,8 @@
     "doc:lint": "deno doc --unstable-byonm --unstable-sloppy-imports --lint src",
     "integrate_test": "node --test integrate_tests/",
     "release:prepublish": "earthly +prepublish",
-    "release": "earthly +publish"
+    "release": "earthly +publish",
+    "jsr:version": "jq -r '.version' package.json | xargs -I {} jq '.version = \"{}\"' jsr.json > temp.json && mv temp.json jsr.json"
   },
   "repository": {
     "type": "git",
