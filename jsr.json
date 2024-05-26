@@ -1,0 +1,12 @@
+{
+  "name": "@kesin11/junit2json",
+  "version": "0.1.1",
+  "exports": "./src/index.ts",
+  "publish": {
+    "include": [
+      "LICENSE",
+      "README.md",
+      "src/**/*.ts"
+    ]
+  }
+}

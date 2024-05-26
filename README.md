@@ -1,5 +1,6 @@
 # ts-junit2json
 [![junit2json](https://badgen.net/npm/v/junit2json)](https://www.npmjs.com/package/junit2json)
+[![JSR](https://jsr.io/badges/@kesin11/junit2json)](https://jsr.io/@kesin11/junit2json)
 ![CI](https://github.com/Kesin11/ts-junit2json/workflows/Node%20CI/badge.svg)
 
 ts-juni2json provides a converter that convert JUnit XML format to JSON. Also provides TypeScript types definition.
