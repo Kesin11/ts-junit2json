@@ -32,8 +32,8 @@ prepublish:
       npm run jsr:version && \
       git add jsr.json package*.json && \
       jq -r '.version' package.json | xargs -I {} git commit -m "{}"
-  RUN npm publish --provenance --tag=beta && \
-      npx -y jsr publish
+  RUN npm publish --provenance --tag=beta
+  RUN npm install && npx -y jsr publish
 
 publish:
   BUILD +integate-test
@@ -46,5 +46,5 @@ publish:
       npm run jsr:version && \
       git add jsr.json package*.json && \
       jq -r '.version' package.json | xargs -I {} git commit -m "{}"
-  RUN npm publish --provenance && \
-      npx -y jsr publish
+  RUN npm publish --provenance
+  RUN npm install && npx -y jsr publish
