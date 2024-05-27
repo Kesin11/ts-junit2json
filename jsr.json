@@ -1,6 +1,6 @@
 {
   "name": "@kesin11/junit2json",
-  "version": "0.1.1",
+  "version": "3.1.10",
   "exports": "./src/index.ts",
   "publish": {
     "include": [
