@@ -25,6 +25,7 @@ npm install junit2json
 ```
 
 # Usage
+## Node.js
 junit2json supports both ESModule and CommonJS.
 
 ```ts
@@ -50,6 +51,14 @@ const main = async () => {
   console.log(JSON.stringify(output, null, 2))
 }
 main()
+```
+
+## Deno
+junit2json also published to jsr.io as `@kesin11/junit2json`.
+If you using Deno, you can import from jsr as below.
+
+```ts
+import { parse } from "jsr:@kesin11/junit2json";
 ```
 
 # Output sample
@@ -171,6 +180,9 @@ JUnit XML format
 
 - https://llg.cubic.org/docs/junit/
 - https://github.com/junit-team/junit5/blob/main/platform-tests/src/test/resources/jenkins-junit.xsd
+
+# API reference
+https://jsr.io/@kesin11/junit2json/doc
 
 # License
 MIT
