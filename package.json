@@ -67,7 +67,7 @@
     "jest-junit": "16.0.0",
     "ts-jest": "29.2.0",
     "tsconfig-to-dual-package": "^1.2.0",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   },
   "jest-junit": {
     "suiteName": "ts-junit2json",
