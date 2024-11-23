@@ -31,11 +31,11 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && tsconfig-to-dual-package",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "node --test --experimental-strip-types --experimental-test-snapshots tests/**/*.test.ts",
+    "test:watch": "node --test --experimental-strip-types --experimental-test-snapshots --watch tests/**/*.test.ts",
     "doc": "deno doc --unstable-byonm --unstable-sloppy-imports --html --name=junit2json src",
     "doc:lint": "deno doc --unstable-byonm --unstable-sloppy-imports --lint src",
-    "integrate_test": "node --test integrate_tests/",
+    "integrate_test": "node --test integrate_tests/*.test.*",
     "release:prepublish": "earthly +prepublish",
     "release": "earthly +publish",
     "jsr:version": "jq -r '.version' package.json | xargs -I {} jq '.version = \"{}\"' jsr.json > temp.json && mv temp.json jsr.json"
@@ -60,20 +60,9 @@
     "yargs": "17.7.2"
   },
   "devDependencies": {
-    "@types/jest": "29.5.14",
-    "@types/node": "20.16.10",
+    "@types/node": "22.9.3",
     "@types/yargs": "17.0.33",
-    "jest": "29.7.0",
-    "jest-junit": "16.0.0",
-    "ts-jest": "29.2.5",
     "tsconfig-to-dual-package": "^1.2.0",
     "typescript": "5.6.3"
-  },
-  "jest-junit": {
-    "suiteName": "ts-junit2json",
-    "outputDirectory": "junit",
-    "uniqueOutputName": "true",
-    "includeConsoleOutput": "true",
-    "usePathForSuiteName": "true"
   }
 }

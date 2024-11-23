@@ -13,7 +13,7 @@ jobs:
         container_tag:
           # - "current"
           - "lts"
-          - "20"
+          - "22"
       fail-fast: false
 
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
         container_tag:
           # - "current"
           - "lts"
-          - "20"
+          - "22"
       fail-fast: false
 
     runs-on: ubuntu-latest
