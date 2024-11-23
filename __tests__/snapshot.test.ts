@@ -1,8 +1,12 @@
-import * as junit2json from '../src/index.js'
-import * as fs from 'fs'
-import * as path from 'path'
+import * as junit2json from '../src/index.ts'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const fixturePath = (fixtureName: string) => {
   return path.join(__dirname, 'fixtures', fixtureName)

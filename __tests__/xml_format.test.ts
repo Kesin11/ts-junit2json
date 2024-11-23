@@ -1,4 +1,4 @@
-import * as junit2json from '../src/index.js'
+import * as junit2json from '../src/index.ts'
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
