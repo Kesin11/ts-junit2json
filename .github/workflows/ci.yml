@@ -13,7 +13,7 @@ jobs:
         container_tag:
           # - "current"
           - "lts"
-          - "20"
+          - "22"
       fail-fast: false
 
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
         node -v
         npm -v
     - run: npm ci
-    - run: node --test --experimental-strip-types
+    - run: npm run test
     - uses: actions/upload-artifact@v4
       with:
         name: "junit test reports node ${{ matrix.container_tag }}"
@@ -39,7 +39,7 @@ jobs:
         container_tag:
           # - "current"
           - "lts"
-          - "20"
+          - "22"
       fail-fast: false
 
     runs-on: ubuntu-latest
@@ -54,4 +54,4 @@ jobs:
         npm -v
     - run: npm ci
     - run: npm run build
-    - run: node --test --experimental-strip-types integrate_tests/
+    - run: npm run integrate_test
