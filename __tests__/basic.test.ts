@@ -1,4 +1,6 @@
 import * as junit2json from '../src/index.js'
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 
 describe('Convert xml2js output tests', () => {
   it('returns null when XML is empty', async () => {
@@ -7,7 +9,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual(null)
+    assert.strictEqual(parsed, null)
   })
 
   it('returns undefined when XML is not a recognized element', async () => {
@@ -17,7 +19,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual(undefined)
+    assert.strictEqual(parsed, undefined)
   })
 
   it('returns undefined when a property is absent', async () => {
@@ -28,7 +30,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml) as junit2json.TestSuite 
 
-    expect(parsed.name).toEqual(undefined)
+    assert.strictEqual(parsed.name, undefined)
   })
 
   it('basic', async () => {
@@ -39,7 +41,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual({
+    assert.deepStrictEqual(parsed, {
       xmlns: "http://foo.com",
       foo: 10
     })
@@ -55,7 +57,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual({
+    assert.deepStrictEqual(parsed, {
         testsuite: [
           { failures: 1, tests: 2 },
         ]
@@ -75,7 +77,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual({
+    assert.deepStrictEqual(parsed, {
         testsuite: [
           {
             tests: 1,
@@ -102,7 +104,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual({
+    assert.deepStrictEqual(parsed, {
       testsuite: [{
         tests: 1,
         testcase: [{
@@ -128,7 +130,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual({
+    assert.deepStrictEqual(parsed, {
       testsuite: [{
         testcase: [{
           "system-out": [ "system out text" ]
@@ -150,7 +152,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual({
+    assert.deepStrictEqual(parsed, {
       testsuite: [{
         testcase: [{
           "system-err": [ "system error text" ]
@@ -173,7 +175,7 @@ describe('Convert xml2js output tests', () => {
     `
     const parsed = await junit2json.parse(xml) as junit2json.TestSuites
 
-    expect(parsed).toEqual({
+    assert.deepStrictEqual(parsed, {
       testsuite: [{
         properties: [
           {name: "hello", value: "bonjour"},

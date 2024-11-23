@@ -1,4 +1,6 @@
 import * as junit2json from '../src/index.js'
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
 
 describe('Parse various xml format tests', () => {
   it('testsuites root', async () => {
@@ -13,7 +15,7 @@ describe('Parse various xml format tests', () => {
 
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual({
+    assert.deepStrictEqual(parsed, {
       name: "testsuites",
       tests: 1,
       failures: 0,
@@ -47,7 +49,7 @@ describe('Parse various xml format tests', () => {
 
     const parsed = await junit2json.parse(xml)
 
-    expect(parsed).toEqual({
+    assert.deepStrictEqual(parsed, {
       name: "testsuite",
       errors: 0,
       tests: 1,
