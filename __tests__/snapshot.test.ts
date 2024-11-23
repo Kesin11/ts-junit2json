@@ -1,8 +1,7 @@
 import * as junit2json from '../src/index.ts'
 import * as fs from 'node:fs'
 import * as path from 'node:path'
-import { describe, it } from 'node:test';
-import assert from 'node:assert/strict';
+import { describe, it, test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,31 +12,31 @@ const fixturePath = (fixtureName: string) => {
 }
 
 describe('parse snapshot', () => {
-  it('all success xml', async () => {
+  test('all success xml', async (t) => {
     const xml = fs.readFileSync(fixturePath('jest-success.xml'))
     const parsed = await junit2json.parse(xml)
 
-    assert.snapshot(parsed, { description: 'all success xml snapshot' });
+    t.assert.snapshot(parsed);
   })
 
-  it('jest failure xml', async () => {
+  test('jest failure xml', async (t) => {
     const xml = fs.readFileSync(fixturePath('jest-failure.xml'))
     const parsed = await junit2json.parse(xml)
 
-    assert.snapshot(parsed, { description: 'jest failure xml snapshot' });
+    t.assert.snapshot(parsed);
   })
 
-  it('nunit failure xml', async () => {
+  test('nunit failure xml', async (t) => {
     const xml = fs.readFileSync(fixturePath('nunit-failure.xml'))
     const parsed = await junit2json.parse(xml)
 
-    assert.snapshot(parsed, { description: 'nunit failure xml snapshot' });
+    t.assert.snapshot(parsed);
   })
 
-  it('Android robolectric success xml', async () => {
+  test('Android robolectric success xml', async (t) => {
     const xml = fs.readFileSync(fixturePath('android-robolectric-success.xml'))
     const parsed = await junit2json.parse(xml)
 
-    assert.snapshot(parsed, { description: 'Android robolectric success xml snapshot' });
+    t.assert.snapshot(parsed);
   })
 })
