@@ -1,0 +1,303 @@
+exports[`parse snapshot > Android robolectric success xml 1`] = `
+{
+  "name": "com.google.samples.apps.sunflower.RobolectricGardenActivityTest2",
+  "tests": 2,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "timestamp": "2020-07-12T03:33:52",
+  "hostname": "fv-az88",
+  "time": 43.444,
+  "properties": [],
+  "testcase": [
+    {
+      "name": "gardenActivityTest2",
+      "classname": "com.google.samples.apps.sunflower.RobolectricGardenActivityTest2",
+      "time": 29.876
+    },
+    {
+      "name": "gardenActivityTest_Eggplant",
+      "classname": "com.google.samples.apps.sunflower.RobolectricGardenActivityTest2",
+      "time": 13.568
+    }
+  ],
+  "system-out": [
+    "Downloading from maven \\n[Robolectric] com.google.samples.apps.sunflower.RobolectricGardenActivityTest2.gardenActivityTest2: sdk=28; resources=BINARY\\nCalled loadFromPath(/system/framework/framework-res.apk, true); mode=binary sdk=28\\n***goPlantList\\n***showPlantDetail\\n***addToMyGarden\\n***goBackPlantList\\n***goMyGarden\\n***assertPlanted\\n[Robolectric] com.google.samples.apps.sunflower.RobolectricGardenActivityTest2.gardenActivityTest_Eggplant: sdk=28; resources=BINARY\\n***goPlantList\\n***showPlantDetail\\n***addToMyGarden\\n***goBackPlantList\\n***goMyGarden\\n***assertPlanted\\n"
+  ],
+  "system-err": [
+    "[Robolectric] WARN: Android SDK 29 requires Java 9 (have Java 8). Tests won't be run on SDK 29 unless explicitly requested.\\nDownloading: org/robolectric/android-all/9-robolectric-4913185-2/android-all-9-robolectric-4913185-2.pom from repository sonatype at https://oss.sonatype.org/content/groups/public/\\nTransferring 2K from sonatype\\nDownloading: org/sonatype/oss/oss-parent/9/oss-parent-9.pom from repository sonatype at https://oss.sonatype.org/content/groups/public/\\nTransferring 6K from sonatype\\nDownloading: org/robolectric/android-all/9-robolectric-4913185-2/android-all-9-robolectric-4913185-2.jar from repository sonatype at https://oss.sonatype.org/content/groups/public/\\nTransferring 118099K from sonatype\\n"
+  ]
+}
+`;
+
+exports[`parse snapshot > all success xml 1`] = `
+{
+  "name": "gcf_junit_xml_to_bq_dummy",
+  "tests": 12,
+  "failures": 0,
+  "time": 5.82,
+  "testsuite": [
+    {
+      "name": "__tests__/gen_dummy_junit/dummy2.test.js",
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "timestamp": "2020-01-12T16:33:39",
+      "time": 4.189,
+      "tests": 4,
+      "testcase": [
+        {
+          "classname": "dummy2 Always success tests should be wait 0-2sec",
+          "name": "dummy2 Always success tests should be wait 0-2sec",
+          "time": 0.045
+        },
+        {
+          "classname": "dummy2 Always success tests should be wait 1-3sec",
+          "name": "dummy2 Always success tests should be wait 1-3sec",
+          "time": 1.992
+        },
+        {
+          "classname": "dummy2 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "name": "dummy2 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "time": 0.062
+        },
+        {
+          "classname": "dummy2 Randomly fail tests should be wait 1-2sec and fail 10%",
+          "name": "dummy2 Randomly fail tests should be wait 1-2sec and fail 10%",
+          "time": 1.289
+        }
+      ]
+    },
+    {
+      "name": "__tests__/gen_dummy_junit/dummy3.test.js",
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "timestamp": "2020-01-12T16:33:39",
+      "time": 5.309,
+      "tests": 4,
+      "testcase": [
+        {
+          "classname": "dummy3 Always success tests should be wait 0-2sec",
+          "name": "dummy3 Always success tests should be wait 0-2sec",
+          "time": 1.875
+        },
+        {
+          "classname": "dummy3 Always success tests should be wait 1-3sec",
+          "name": "dummy3 Always success tests should be wait 1-3sec",
+          "time": 1.346
+        },
+        {
+          "classname": "dummy3 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "name": "dummy3 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "time": 0.11
+        },
+        {
+          "classname": "dummy3 Randomly fail tests should be wait 1-2sec and fail 20%",
+          "name": "dummy3 Randomly fail tests should be wait 1-2sec and fail 20%",
+          "time": 1.211
+        }
+      ]
+    },
+    {
+      "name": "__tests__/gen_dummy_junit/dummy1.test.js",
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "timestamp": "2020-01-12T16:33:39",
+      "time": 5.406,
+      "tests": 4,
+      "testcase": [
+        {
+          "classname": "dummy1 Always success tests should be wait 0-2sec",
+          "name": "dummy1 Always success tests should be wait 0-2sec",
+          "time": 0.494
+        },
+        {
+          "classname": "dummy1 Always success tests should be wait 1-3sec",
+          "name": "dummy1 Always success tests should be wait 1-3sec",
+          "time": 1.466
+        },
+        {
+          "classname": "dummy1 Randomly fail tests should be wait 0-1sec and fail 50%",
+          "name": "dummy1 Randomly fail tests should be wait 0-1sec and fail 50%",
+          "time": 0.73
+        },
+        {
+          "classname": "dummy1 Randomly fail tests should be wait 1-2sec and fail 30%",
+          "name": "dummy1 Randomly fail tests should be wait 1-2sec and fail 30%",
+          "time": 1.952
+        }
+      ]
+    }
+  ]
+}
+`;
+
+exports[`parse snapshot > jest failure xml 1`] = `
+{
+  "name": "gcf_junit_xml_to_bq_dummy",
+  "tests": 12,
+  "failures": 2,
+  "time": 8.018,
+  "testsuite": [
+    {
+      "name": "__tests__/gen_dummy_junit/dummy1.test.js",
+      "errors": 0,
+      "failures": 1,
+      "skipped": 0,
+      "timestamp": "2020-01-12T16:33:13",
+      "time": 4.772,
+      "tests": 4,
+      "testcase": [
+        {
+          "classname": "dummy1 Always success tests should be wait 0-2sec",
+          "name": "dummy1 Always success tests should be wait 0-2sec",
+          "time": 0.414
+        },
+        {
+          "classname": "dummy1 Always success tests should be wait 1-3sec",
+          "name": "dummy1 Always success tests should be wait 1-3sec",
+          "time": 1.344
+        },
+        {
+          "classname": "dummy1 Randomly fail tests should be wait 0-1sec and fail 50%",
+          "name": "dummy1 Randomly fail tests should be wait 0-1sec and fail 50%",
+          "time": 0.673,
+          "failure": [
+            {
+              "inner": "Error: expect(received).toBeGreaterThan(expected)\\n\\nExpected: > 50\\nReceived:   4.897277513425746\\n    at Object.it (/Users/kesin/github/gcf_junit_xml_to_bq/__tests__/gen_dummy_junit/dummy1.test.js:22:17)"
+            }
+          ]
+        },
+        {
+          "classname": "dummy1 Randomly fail tests should be wait 1-2sec and fail 30%",
+          "name": "dummy1 Randomly fail tests should be wait 1-2sec and fail 30%",
+          "time": 1.604
+        }
+      ]
+    },
+    {
+      "name": "__tests__/gen_dummy_junit/dummy3.test.js",
+      "errors": 0,
+      "failures": 1,
+      "skipped": 0,
+      "timestamp": "2020-01-12T16:33:13",
+      "time": 6.372,
+      "tests": 4,
+      "testcase": [
+        {
+          "classname": "dummy3 Always success tests should be wait 0-2sec",
+          "name": "dummy3 Always success tests should be wait 0-2sec",
+          "time": 1.328
+        },
+        {
+          "classname": "dummy3 Always success tests should be wait 1-3sec",
+          "name": "dummy3 Always success tests should be wait 1-3sec",
+          "time": 2.598
+        },
+        {
+          "classname": "dummy3 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "name": "dummy3 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "time": 0.455,
+          "failure": [
+            {
+              "inner": "Error: expect(received).toBeGreaterThan(expected)\\n\\nExpected: > 30\\nReceived:   12.15901879426653\\n    at Object.it (/Users/kesin/github/gcf_junit_xml_to_bq/__tests__/gen_dummy_junit/dummy3.test.js:22:17)"
+            }
+          ]
+        },
+        {
+          "classname": "dummy3 Randomly fail tests should be wait 1-2sec and fail 20%",
+          "name": "dummy3 Randomly fail tests should be wait 1-2sec and fail 20%",
+          "time": 1.228
+        }
+      ]
+    },
+    {
+      "name": "__tests__/gen_dummy_junit/dummy2.test.js",
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "timestamp": "2020-01-12T16:33:13",
+      "time": 7.612,
+      "tests": 4,
+      "testcase": [
+        {
+          "classname": "dummy2 Always success tests should be wait 0-2sec",
+          "name": "dummy2 Always success tests should be wait 0-2sec",
+          "time": 1.937
+        },
+        {
+          "classname": "dummy2 Always success tests should be wait 1-3sec",
+          "name": "dummy2 Always success tests should be wait 1-3sec",
+          "time": 2.904
+        },
+        {
+          "classname": "dummy2 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "name": "dummy2 Randomly fail tests should be wait 0-1sec and fail 30%",
+          "time": 0.105
+        },
+        {
+          "classname": "dummy2 Randomly fail tests should be wait 1-2sec and fail 10%",
+          "name": "dummy2 Randomly fail tests should be wait 1-2sec and fail 10%",
+          "time": 1.948
+        }
+      ]
+    }
+  ]
+}
+`;
+
+exports[`parse snapshot > nunit failure xml 1`] = `
+{
+  "name": "Tutorial.Tests.dll",
+  "tests": 4,
+  "failures": 1,
+  "time": 0.0105824,
+  "testsuite": [
+    {
+      "name": "Tutorial.Tests.dll",
+      "tests": 4,
+      "skipped": 0,
+      "failures": 1,
+      "errors": 0,
+      "time": 0.0105824,
+      "timestamp": "2019-12-31T 09:33:25Z",
+      "hostname": "executor://xunit/VsTestRunner2/netcoreapp",
+      "testcase": [
+        {
+          "classname": "Tutorial.Tests.PersonClassTest",
+          "name": "Tutorial.Tests.PersonClassTest.PersonClass_ToString",
+          "file": "/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll",
+          "time": 0.0039775
+        },
+        {
+          "classname": "Tutorial.Tests.PersonTest",
+          "name": "Tutorial.Tests.PersonTest.Person_fname",
+          "file": "/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll",
+          "time": 0.0063612,
+          "failure": [
+            {
+              "inner": "   at Tutorial.Tests.PersonTest.Person_fname() in /Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/PersonTest.cs:line 23\\n",
+              "type": "failure",
+              "message": "Assert.Equal() Failure\\n          ↓ (pos 0)\\nExpected: foge\\nActual:   john\\n          ↑ (pos 0)"
+            }
+          ]
+        },
+        {
+          "classname": "Tutorial.Tests.PersonTest",
+          "name": "Tutorial.Tests.PersonTest.Person_Name",
+          "file": "/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll",
+          "time": 0.0001106
+        },
+        {
+          "classname": "Tutorial.Tests.PersonTest",
+          "name": "Tutorial.Tests.PersonTest.Person_lname",
+          "file": "/Users/kesin/github/csharp-tutorial/tests/Tutorial.Tests/bin/Debug/netcoreapp3.1/Tutorial.Tests.dll",
+          "time": 0.0001331
+        }
+      ]
+    }
+  ]
+}
+`;
