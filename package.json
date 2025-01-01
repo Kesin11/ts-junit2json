@@ -1,6 +1,6 @@
 {
   "name": "junit2json",
-  "version": "3.1.12",
+  "version": "3.1.13",
   "description": "Convert JUnit XML format to JSON",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
