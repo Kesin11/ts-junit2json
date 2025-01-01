@@ -34,24 +34,12 @@ jobs:
         path: junit
 
   cli_test:
-    strategy:
-      matrix:
-        container_tag:
-          # - "current"
-          - "lts"
-          - "22"
-      fail-fast: false
-
     runs-on: ubuntu-latest
-    container:
-      image: "node:${{ matrix.container_tag }}"
 
     steps:
     - uses: actions/checkout@v4
-    - name: Show node env
-      run: |
-        node -v
-        npm -v
-    - run: npm ci
-    - run: npm run build
-    - run: npm run integrate_test
+    - uses: earthly/actions-setup@v1.0.13
+      with:
+        version: latest
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+    - run: earthly +integrate-test

@@ -12,9 +12,9 @@ build:
   RUN npm run build
   SAVE ARTIFACT dist/ dist
 
-integate-test:
+integrate-test:
   FROM +build
-  COPY --dir integrate_tests __tests__ .
+  COPY --dir integrate_tests tests .
   RUN rm -rf dist
   COPY +build/dist dist
 
@@ -22,7 +22,7 @@ integate-test:
 
 # Test publishing from local purpose
 prepublish:
-  BUILD +integate-test
+  BUILD +integrate-test
   LOCALLY
   RUN rm -rf dist
   COPY +build/dist dist
@@ -36,7 +36,7 @@ prepublish:
   RUN npm install && npx -y jsr publish
 
 publish:
-  BUILD +integate-test
+  BUILD +integrate-test
   LOCALLY
   ARG --required VERSION
   RUN rm -rf dist
