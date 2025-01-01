@@ -14,7 +14,7 @@ build:
 
 integrate-test:
   FROM +build
-  COPY --dir integrate_tests __tests__ .
+  COPY --dir integrate_tests tests .
   RUN rm -rf dist
   COPY +build/dist dist
 
