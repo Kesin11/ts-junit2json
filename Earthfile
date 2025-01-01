@@ -1,6 +1,6 @@
 VERSION 0.8
 
-FROM node:20.18.1
+FROM node:22.12.0
 WORKDIR /build
 
 build:
