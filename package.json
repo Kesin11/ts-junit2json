@@ -60,7 +60,7 @@
     "yargs": "18.0.0"
   },
   "devDependencies": {
-    "@types/node": "22.15.29",
+    "@types/node": "22.15.33",
     "@types/yargs": "17.0.33",
     "tsconfig-to-dual-package": "^1.2.0",
     "typescript": "5.8.3"
