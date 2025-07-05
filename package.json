@@ -31,7 +31,8 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && tsconfig-to-dual-package",
-    "test": "node --test --experimental-strip-types --experimental-test-snapshots tests/**/*.test.ts",
+    "pretest": "rm -rf junit && mkdir -p junit",
+    "test": "node --test --experimental-strip-types --experimental-test-snapshots --test-reporter=junit --test-reporter-destination=junit/test-results.xml tests/**/*.test.ts",
     "test:watch": "node --test --experimental-strip-types --experimental-test-snapshots --watch tests/**/*.test.ts",
     "doc": "deno doc --unstable-byonm --unstable-sloppy-imports --html --name=junit2json src",
     "doc:lint": "deno doc --unstable-byonm --unstable-sloppy-imports --lint src",
