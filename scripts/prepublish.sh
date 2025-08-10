@@ -26,7 +26,6 @@ echo "Publishing to npm with beta tag..."
 npm publish --provenance --tag=beta
 
 echo "Publishing to JSR..."
-npm install
 npx -y jsr publish
 
 echo "Prepublish completed successfully!"

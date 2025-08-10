@@ -36,7 +36,6 @@ echo "Publishing to npm..."
 npm publish --provenance
 
 echo "Publishing to JSR..."
-npm install
 npx -y jsr publish
 
 echo "Publish completed successfully!"
