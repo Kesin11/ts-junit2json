@@ -39,12 +39,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '22.18.0'
+          node-version-file: .tool-versions
           registry-url: 'https://registry.npmjs.org'
-      - uses: earthly/actions-setup@v1.0.13
-        with:
-          version: latest
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # Use GitHub App for bypassing ruleset guard when git push by npm publish
       - uses: actions/create-github-app-token@v2

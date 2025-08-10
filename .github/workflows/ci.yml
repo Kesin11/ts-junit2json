@@ -40,8 +40,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: earthly/actions-setup@v1.0.13
+    - uses: actions/setup-node@v4
       with:
-        version: latest
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-    - run: earthly +integrate-test
+        node-version-file: .tool-versions
+    - run: npm ci
+    - run: npm run build
+    - run: npm run integrate_test
