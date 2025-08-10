@@ -37,8 +37,8 @@
     "doc": "deno doc --unstable-byonm --unstable-sloppy-imports --html --name=junit2json src",
     "doc:lint": "deno doc --unstable-byonm --unstable-sloppy-imports --lint src",
     "integrate_test": "node --test integrate_tests/*.test.*",
-    "release:prepublish": "earthly +prepublish",
-    "release": "earthly +publish",
+    "release:prepublish": "./scripts/prepublish.sh",
+    "release": "./scripts/publish.sh",
     "jsr:version": "jq -r '.version' package.json | xargs -I {} jq '.version = \"{}\"' jsr.json > temp.json && mv temp.json jsr.json"
   },
   "repository": {
