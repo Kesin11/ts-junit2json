@@ -33,7 +33,7 @@ ACTUAL_VERSION=$(jq -r '.version' package.json)
 git commit -m "$ACTUAL_VERSION"
 
 echo "Publishing to npm..."
-npm publish --provenance
+npm publish
 
 echo "Publishing to JSR..."
 npx -y jsr publish

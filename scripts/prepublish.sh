@@ -23,7 +23,7 @@ VERSION=$(jq -r '.version' package.json)
 git commit -m "$VERSION"
 
 echo "Publishing to npm with beta tag..."
-npm publish --provenance --tag=beta
+npm publish --tag=beta
 
 echo "Publishing to JSR..."
 npx -y jsr publish

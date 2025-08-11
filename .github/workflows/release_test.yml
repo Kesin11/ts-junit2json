@@ -18,6 +18,10 @@ jobs:
           node-version-file: .tool-versions
           registry-url: 'https://registry.npmjs.org'
 
+      # Ensure npm 11.5.1 or later for trusted publishing
+      - name: Update npm
+        run: npm install -g npm@latest
+
       - name: Setup git config
         run: |
           git config user.name github-actions
@@ -30,4 +34,3 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
