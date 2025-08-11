@@ -37,15 +37,6 @@ jobs:
           export TAG_NAME=${{ needs.draft_release.outputs.tag_name }}
           echo "VERSION=${TAG_NAME:1}" >> $GITHUB_ENV
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .tool-versions
-          registry-url: 'https://registry.npmjs.org'
-
-      # Ensure npm 11.5.1 or later for trusted publishing
-      - name: Update npm
-        run: npm install -g npm@latest
-
       # Use GitHub App for bypassing ruleset guard when git push by npm publish
       - uses: actions/create-github-app-token@v2
         id: app-token
@@ -60,6 +51,14 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .tool-versions
+          registry-url: 'https://registry.npmjs.org'
+      # Ensure npm 11.5.1 or later for trusted publishing
+      - name: Update npm
+        run: npm install -g npm@latest
 
       # npm publish and push updated package.json
       - name: Publish to npm and jsr
