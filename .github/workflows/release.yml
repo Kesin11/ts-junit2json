@@ -63,7 +63,7 @@ jobs:
       # npm publish and push updated package.json
       - name: Publish to npm and jsr
         run: |
-          npm run release -- --VERSION=$VERSION
+          npm run release -- $VERSION
           git push origin master
 
       # Publish github releases. Also tag will be created.
