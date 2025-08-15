@@ -19,11 +19,22 @@ describe('CLI exec with no option should complete', () => {
     }
 });
 
-test('CLI exec with --filter-tags', (_t, done) => {
-    exec("node ./dist/esm/cli.js --filter-tags system-out tests/fixtures/android-robolectric-success.xml", (_error, stdout, _stderr) => {
-      const output = JSON.parse(stdout)
-      assert.ok(!output["system-out"], "system-out should not be present")
-      assert.ok(output["system-err"], "system-err should be present")
-      done()
-    })
-});
+describe('CLI exec with --filter-tags', () => {
+  test('single tag', (_t, done) => {
+      exec("node ./dist/esm/cli.js --filter-tags system-out tests/fixtures/android-robolectric-success.xml", (_error, stdout, _stderr) => {
+        const output = JSON.parse(stdout)
+        assert.ok(!output["system-out"], "system-out should not be present")
+        assert.ok(output["system-err"], "system-err should be present")
+        done()
+      })
+  });
+
+  test('multipe tags', (_t, done) => {
+      exec("node ./dist/esm/cli.js --filter-tags system-out,system-err tests/fixtures/android-robolectric-success.xml", (_error, stdout, _stderr) => {
+        const output = JSON.parse(stdout)
+        assert.ok(!output["system-out"], "system-out should not be present")
+        assert.ok(!output["system-err"], "system-err should not be present")
+        done()
+      })
+  });
+})
