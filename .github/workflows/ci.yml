@@ -23,7 +23,7 @@ jobs:
       image: "node:${{ matrix.container_tag }}"
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Show node env
       run: |
         node -v
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - uses: actions/setup-node@v4
       with:
         node-version-file: .tool-versions
