@@ -57,12 +57,10 @@
   "homepage": "https://github.com/Kesin11/ts-junit2json#readme",
   "dependencies": {
     "@types/xml2js": "0.4.14",
-    "xml2js": "0.6.2",
-    "yargs": "18.0.0"
+  "xml2js": "0.6.2"
   },
   "devDependencies": {
     "@types/node": "22.16.5",
-    "@types/yargs": "17.0.33",
     "tsconfig-to-dual-package": "^1.2.0",
     "typescript": "5.9.2"
   }

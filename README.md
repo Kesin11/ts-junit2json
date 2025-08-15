@@ -110,8 +110,8 @@ import { parse } from "jsr:@kesin11/junit2json";
 }
 ```
 
-# Filter some tags
-If you want to filter some tags like `<system-out>` or `<system-err>`, you can use `replacer` function argument in [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
+# Filter out some tags
+If you want to filter out some tags like `<system-out>` or `<system-err>`, you can use `replacer` function argument in [`JSON.stringify()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify).
 
 ```ts
 const output = await parse(xmlString)
@@ -138,21 +138,19 @@ npx junit2json -p -f system-out,system-err junit.xml
 ```
 
 ```
-junit2json <path>
-
-Convert JUnit XML format to JSON
+junit2json - Convert JUnit XML format to JSON
 
 Positionals:
   path  JUnit XML path                                                  [string]
 
 Options:
-  --help             Show help                                         [boolean]
-  --version          Show version number                               [boolean]
-  -p, --pretty       Output pretty JSON                                [boolean]
-  -f, --filter-tags  Filter XML tag names                               [string]
+      --help                        Show help                          [boolean]
+      --version                     Show version number                [boolean]
+  -p, --pretty                      Output pretty JSON[boolean] [default: false]
+  -f, --filter-tags                 Filter XML tag names                [string]
 
 Examples:
-  junit2json -p -f system-out,system-err    Output pretty JSON with filter
+  cli.js -p -f system-out,system-err        Output pretty JSON with filter
   junit.xml                                 <system-out> and <system-err> tags.
 ```
 
