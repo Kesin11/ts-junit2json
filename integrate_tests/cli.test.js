@@ -29,7 +29,7 @@ describe('CLI exec with --filter-tags', () => {
       })
   });
 
-  test('multipe tags', (_t, done) => {
+  test('multiple tags', (_t, done) => {
       exec("node ./dist/esm/cli.js --filter-tags system-out,system-err tests/fixtures/android-robolectric-success.xml", (_error, stdout, _stderr) => {
         const output = JSON.parse(stdout)
         assert.ok(!output["system-out"], "system-out should not be present")
