@@ -1,22 +1,24 @@
 #!/usr/bin/env node
 import fs from 'node:fs'
+import path from 'node:path'
 import { parseArgs } from 'node:util'
 import { parse } from './index.js'
 
 const printHelp = () => {
   const help = `junit2json - Convert JUnit XML format to JSON
 
-Usage:
-  junit2json [options] <path>
+Positionals:
+  path  JUnit XML path                                                  [string]
 
 Options:
-  -p, --pretty              Output pretty formatted JSON (default: false)
-  -f, --filter-tags <tags>  Comma separated XML tag names to filter out from output
-  -h, --help                Show this help and exit
+      --help                        Show help                          [boolean]
+      --version                     Show version number                [boolean]
+  -p, --pretty                      Output pretty JSON[boolean] [default: false]
+  -f, --filter-tags                 Filter XML tag names                [string]
 
 Examples:
-  junit2json junit.xml
-  junit2json -p -f system-out,system-err junit.xml`
+  cli.js -p -f system-out,system-err        Output pretty JSON with filter
+  junit.xml                                 <system-out> and <system-err> tags.`
   console.log(help)
 }
 
@@ -26,6 +28,7 @@ const main = async () => {
       help: { type: 'boolean', short: 'h' },
       pretty: { type: 'boolean', short: 'p' },
       'filter-tags': { type: 'string', short: 'f' },
+      version: { type: 'boolean' },
     },
     allowPositionals: true,
     strict: true,
@@ -35,16 +38,29 @@ const main = async () => {
     printHelp()
     process.exit(0)
   }
+  if (values.version) {
+    try {
+      const cliDir = path.dirname(process.argv[1] || '.')
+      const pkgPath = path.resolve(cliDir, '../../package.json')
+      const pkgJson = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+      console.log(pkgJson.version)
+      process.exit(0)
+    } catch {
+      // Fallback: no version available
+      console.log('')
+      process.exit(0)
+    }
+  }
 
-  const path = positionals[0]
-  if (!path) {
+  const inputPath = positionals[0]
+  if (!inputPath) {
     console.error('Error: Missing required <path> to JUnit XML file.')
     console.error('')
     printHelp()
     process.exit(1)
   }
 
-  const xmlString = fs.readFileSync(path, 'utf8').toString()
+  const xmlString = fs.readFileSync(inputPath, 'utf8').toString()
 
   const filterTags = typeof values['filter-tags'] === 'string' && values['filter-tags'].length > 0
     ? values['filter-tags'].split(',')
