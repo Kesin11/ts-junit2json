@@ -8,7 +8,7 @@ const printHelp = () => {
   const help = `junit2json - Convert JUnit XML format to JSON
 
 Positionals:
-  path  JUnit XML path                                                  [string]
+  path  JUnit XML path (use '-' for stdin)                             [string]
 
 Options:
       --help                        Show help                          [boolean]
@@ -60,7 +60,8 @@ const main = async () => {
     process.exit(1)
   }
 
-  const xmlString = fs.readFileSync(inputPath, 'utf8').toString()
+  const nameOrDesc: number|string = (inputPath === '-') ? 0 : inputPath;
+  const xmlString = fs.readFileSync(nameOrDesc, 'utf8').toString()
 
   const filterTags = typeof values['filter-tags'] === 'string' && values['filter-tags'].length > 0
     ? values['filter-tags'].split(',')
