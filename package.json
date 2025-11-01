@@ -60,7 +60,7 @@
     "xml2js": "0.6.2"
   },
   "devDependencies": {
-    "@types/node": "22.18.6",
+    "@types/node": "24.9.2",
     "tsconfig-to-dual-package": "^1.2.0",
     "typescript": "5.9.3"
   }
