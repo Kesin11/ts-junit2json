@@ -30,7 +30,7 @@ jobs:
         npm -v
     - run: npm ci
     - run: npm run test
-    - uses: actions/upload-artifact@v6
+    - uses: actions/upload-artifact@v7
       with:
         name: "junit test reports node ${{ matrix.container_tag }}"
         path: junit
