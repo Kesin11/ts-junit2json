@@ -38,7 +38,7 @@ jobs:
           echo "VERSION=${TAG_NAME:1}" >> $GITHUB_ENV
 
       # Use GitHub App for bypassing ruleset guard when git push by npm publish
-      - uses: actions/create-github-app-token@v2
+      - uses: actions/create-github-app-token@v3
         id: app-token
         with:
           app-id: ${{ secrets.BYPASS_APP_ID }}
