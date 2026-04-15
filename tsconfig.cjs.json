@@ -3,6 +3,6 @@
   "compilerOptions": {
     "module": "CommonJS",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
     "outDir": "./dist/cjs/",
-    "moduleResolution": "node"
+    "moduleResolution": "bundler"
   }
 }
