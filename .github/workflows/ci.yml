@@ -15,7 +15,7 @@ jobs:
         container_tag:
           # - "current"
           - "lts"
-          - "22"
+          - "24"
       fail-fast: false
 
     runs-on: ubuntu-latest
