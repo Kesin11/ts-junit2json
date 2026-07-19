@@ -30,7 +30,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && tsconfig-to-dual-package",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node -e \"const fs = require(\\\"node:fs\\\"); fs.writeFileSync(\\\"dist/esm/package.json\\\", \\\"{\\\\\\\"type\\\\\\\":\\\\\\\"module\\\\\\\"}\\\\n\\\"); fs.writeFileSync(\\\"dist/cjs/package.json\\\", \\\"{\\\\\\\"type\\\\\\\":\\\\\\\"commonjs\\\\\\\"}\\\\n\\\")\"",
     "pretest": "rm -rf junit && mkdir -p junit",
     "test": "node --test --experimental-strip-types --experimental-test-snapshots --test-reporter=junit --test-reporter-destination=junit/test-results.xml tests/**/*.test.ts",
     "test:watch": "node --test --experimental-strip-types --experimental-test-snapshots --watch tests/**/*.test.ts",
@@ -61,7 +61,6 @@
   },
   "devDependencies": {
     "@types/node": "24.13.2",
-    "tsconfig-to-dual-package": "^1.2.0",
     "typescript": "7.0.2"
   }
 }
