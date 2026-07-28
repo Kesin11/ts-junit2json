@@ -26,11 +26,15 @@ npm install junit2json
 
 # Usage
 ## Node.js
-junit2json supports both ESModule and CommonJS.
+junit2json is an ESModule only package since v4.0.0.
+
+> [!NOTE]
+> Until v3, junit2json also shipped a CommonJS build. It was dropped in v4.0.0.
+> CommonJS users on Node.js 20.19.0+ or 22.12.0+ can still `require('junit2json')`
+> thanks to the stable `require(esm)` support.
 
 ```ts
-import { parse } from 'junit2json' // ESM
-// const { parse } = require('junit2json') // CommonJS
+import { parse } from 'junit2json'
 
 const main = async () => {
   const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
