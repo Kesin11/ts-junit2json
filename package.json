@@ -2,21 +2,12 @@
   "name": "junit2json",
   "version": "3.2.1",
   "description": "Convert JUnit XML format to JSON",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/esm/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "types": "./dist/cjs/index.d.ts",
-        "default": "./dist/cjs/index.js"
-      },
-      "default": "./dist/cjs/index.js"
+      "types": "./dist/esm/index.d.ts",
+      "default": "./dist/esm/index.js"
     },
     "./package.json": "./package.json"
   },
@@ -26,11 +17,11 @@
     "LICENSE"
   ],
   "bin": {
-    "junit2json": "dist/cjs/cli.js"
+    "junit2json": "dist/esm/cli.js"
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && tsconfig-to-dual-package",
+    "build": "tsc -p tsconfig.json",
     "pretest": "rm -rf junit && mkdir -p junit",
     "test": "node --test --experimental-strip-types --experimental-test-snapshots --test-reporter=junit --test-reporter-destination=junit/test-results.xml tests/**/*.test.ts",
     "test:watch": "node --test --experimental-strip-types --experimental-test-snapshots --watch tests/**/*.test.ts",
@@ -61,7 +52,6 @@
   },
   "devDependencies": {
     "@types/node": "24.13.2",
-    "tsconfig-to-dual-package": "^1.2.0",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   }
 }
